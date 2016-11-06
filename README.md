@@ -12,3 +12,10 @@ Clone the repo
 
 Install dependencies
 `npm install`
+
+Start the server
+`node wrapper.js`
+
+
+View the (local) page
+`121.0.0.1:3000'
