@@ -4,7 +4,9 @@
   "description": "Code for Baltimore Website",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "forever start wrapper.js",
+    "stop": "forever stop wrapper.js"
   },
   "repository": {
     "type": "git",
@@ -37,8 +39,8 @@
     "ejs": "^2.5.2",
     "express": "^4.14.0",
     "flux": "^3.1.0",
-    "forever": "^0.15.2",
-    "forever-monitor": "^1.7.0",
+    "forever": "^0.15.3",
+    "forever-monitor": "^1.7.1",
     "keymirror": "^0.1.1",
     "lodash": "^4.16.6",
     "object-assign": "^4.1.0",

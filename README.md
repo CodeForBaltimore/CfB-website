@@ -5,4 +5,11 @@ The page is designed using React.js.
 
 
 
-Instructions...
+Instructions to work with this repository:
+
+'''
+git clone https://github.com/CodeForBaltimore/CfB-website.git
+
+npm install
+
+'''
