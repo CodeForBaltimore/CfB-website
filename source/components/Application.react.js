@@ -2,6 +2,7 @@ var React = require('react');
 var Header = require('./Header.react');
 
 
+
 var Application = React.createClass({
 
   //default API
@@ -36,7 +37,11 @@ var Application = React.createClass({
     return (
       <div className="container-fluid">
         <center>
-          <Header text="Hello, homie"/>
+          <Header
+            headerText="Hack Local"
+            subHeaderText = "Code for Baltimore"
+            />
+
         </center>
       </div>
     );

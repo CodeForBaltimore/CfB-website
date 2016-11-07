@@ -120,7 +120,8 @@ var server = function() {
     self.app.use(express.static('public'));
     self.app.use('/', express.static(__dirname + '/build'));
     self.app.use('/stylesheets', express.static(__dirname + '/public/stylesheets'));
-
+    self.app.use('/images', express.static(__dirname + '/public/img'));
+    self.app.use('/js', express.static(__dirname + '/public/js'));
     self.app.set('view engine', 'ejs');
 
     //  Add handlers for the app (from the routes).
