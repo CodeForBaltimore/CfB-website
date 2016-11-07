@@ -38,8 +38,9 @@ var Application = React.createClass({
       <div className="container-fluid">
         <center>
           <Header
-            headerText="Hack Local"
-            subHeaderText = "Code for Baltimore"
+            subHeaderText="Hack Local"
+            headerText = "Code for Baltimore"
+            imgSrc = "/images/CfB_Final.png"
             />
 
         </center>
