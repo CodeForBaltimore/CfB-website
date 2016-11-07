@@ -2,7 +2,7 @@ var React = require('react');
 var Jumbotron = require('react-bootstrap').Jumbotron;
 var Col = require('react-bootstrap').Col;
 var Row = require('react-bootstrap').Row;
-var Image = require('react-bootstrap').Image;
+
 
 var headerStyle = {
   fontSize: '16px',

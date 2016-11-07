@@ -1,5 +1,6 @@
 var React = require('react');
 var Header = require('./Header.react');
+var Navbar = require('./Navbar.react');
 
 
 
@@ -42,6 +43,10 @@ var Application = React.createClass({
             headerText = "Code for Baltimore"
             imgSrc = "/images/CfB_Final.png"
             />
+          <Navbar />
+
+
+          <div style={{height:"1000px"}}><br /></div>
 
         </center>
       </div>
