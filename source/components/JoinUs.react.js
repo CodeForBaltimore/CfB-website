@@ -24,9 +24,11 @@ var NAME = React.createClass({
   render: function() {
     return (
       <div className="container-fluid">
-        <center>
-        stuff...
-        </center>
+
+
+
+
+      
       </div>
     );
 
