@@ -25,7 +25,7 @@ var NAME = React.createClass({
     return (
       <div className="container-fluid">
         <center>
-        stuff...
+        
         </center>
       </div>
     );

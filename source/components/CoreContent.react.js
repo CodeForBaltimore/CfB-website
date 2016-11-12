@@ -50,6 +50,7 @@ var NAME = React.createClass({
         />
         <ContentCard
           headerText="Featured Projects"
+          content={featured}
           footerText="...Coming Soon"
         />
       </Row>
@@ -57,6 +58,7 @@ var NAME = React.createClass({
       <Row style={rowStyle}>
         <ContentCard
           headerText="Event Photos"
+          content={photos}
           footerText="...Coming Soon"
         />
       </Row>
