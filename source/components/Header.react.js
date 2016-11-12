@@ -28,7 +28,7 @@ var Header = React.createClass({
           </Col>
           <h1>{this.props.headerText}</h1>
           <Col xs={12} md={4}>
-            <p>{this.props.subHeaderText}</p>
+            <p style={{color:"#f5931e", fontWeight:"bold", fontSize:"2em"}}>{this.props.subHeaderText}</p>
           </Col>
         </Row>
 
