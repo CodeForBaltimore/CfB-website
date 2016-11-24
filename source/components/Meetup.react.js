@@ -1,7 +1,15 @@
 var React = require('react');
-
+var meetUpActions = require("../actions/meetUp.actions.js")
+var meetUpStore = require("../stores/meetUp.store.js")
 
 var NAME = React.createClass({
+
+  getEvents:function() {
+    meetUpStore.getEvents(function(data) {
+        console.log("events from store");
+    })
+
+  }
 
   //default API ----------------
 
@@ -9,11 +17,22 @@ var NAME = React.createClass({
   //    return null;
   //},
 
-  //getInitialState: function() {},
+  getInitialState: function() {
+    return ({
+      events:{}
+    })
+
+
+
+  },
   //
-  //componentWillMount: function(){},
+  componentWillMount: function(){
+    meetUpActions.fetchEvents()
+  },
   //
-  //componentDidMount: function(){},
+  componentDidMount: function(){
+    meetUpStore.addChangeListener(this.getEvents)
+  },
   //
   //componentWillReceiveProps: function(){},
 
@@ -36,7 +55,9 @@ var NAME = React.createClass({
 
   //componentDidUpdate: function(){},
   //
-  //componentWillUnmount: function(){}
+  componentWillUnmount: function(){
+    meetUpStore.removeChangeListener(this.getEvents)
+  }
 
 });
 

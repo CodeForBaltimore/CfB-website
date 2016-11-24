@@ -4,7 +4,7 @@ require('isomorphic-fetch');
 
 module.exports={
 
-getEvents:function(callback) {
+fetch`Events:function(callback) {
 
   fetch('https://api.meetup.com/Code-for-Baltimore/events')
       .then(function(response) {
