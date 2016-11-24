@@ -5,11 +5,8 @@ var meetUpStore = require("../stores/meetUp.store.js")
 var NAME = React.createClass({
 
   getEvents:function() {
-    meetUpStore.getEvents(function(data) {
-        console.log("events from store");
-    })
-
-  }
+    this.setState({events:meetUpStore.getEvents()});
+  },
 
   //default API ----------------
 
@@ -41,6 +38,7 @@ var NAME = React.createClass({
   //componentWillUpdate: function(){},
 
   render: function() {
+    console.log(this.state.events);
     return (
       <div className="container-fluid">
         <center>
@@ -49,9 +47,7 @@ var NAME = React.createClass({
       </div>
     );
 
-  }
-
-  //,
+  },
 
   //componentDidUpdate: function(){},
   //

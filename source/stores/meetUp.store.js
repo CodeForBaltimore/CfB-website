@@ -7,9 +7,21 @@ var assign = require('object-assign');
 var ActionTypes = meetUpConstants.ActionTypes;
 
 // Internal object of fields
-var  _store;
-_store.events = {}
+var  _store ={};
+_store.events = []
 
+
+function loadEvents(data) {
+  // events from meeet up sort in ascending order by defualt
+  if (data.length > 0){
+    _store.events = data
+  }else{
+    _store.events = []
+  }
+
+
+
+}
 
 // Merge our store with Node's Event Emitter
 var meetUpStore = assign({}, EventEmitter.prototype, {
@@ -39,8 +51,8 @@ AppDispatcher.register(function(action) {
   console.log(action.data);
   switch(action.type) {
 
-    case ActionTypes.ACTIONNAME:
-      someAction(action.data);
+    case ActionTypes.LOAD_EVENTS:
+      loadEvents(action.data);
       break;
 
     default:
