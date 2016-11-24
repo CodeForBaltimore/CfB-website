@@ -38,17 +38,20 @@
     "cookie-parser": "^1.4.3",
     "ejs": "^2.5.2",
     "es6-promise": "^4.0.5",
+    "events": "^1.1.1",
     "express": "^4.14.0",
     "flux": "^3.1.0",
     "forever": "^0.15.3",
     "forever-monitor": "^1.7.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-html-replace": "^1.6.2",
     "isomorphic-fetch": "^2.2.1",
     "keymirror": "^0.1.1",
-    "lodash": "^4.16.6",
+    "lodash": "^4.17.2",
     "object-assign": "^4.1.0",
-    "react": "^15.3.2",
-    "react-bootstrap": "^0.30.6",
-    "react-dom": "^15.3.2",
-    "serve-favicon": "^2.3.0"
+    "react": "^15.4.1",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^15.4.1",
+    "serve-favicon": "^2.3.2"
   }
 }

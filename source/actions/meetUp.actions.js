@@ -8,7 +8,8 @@ var ActionTypes = meetUpConstants.ActionTypes;
 var meetUpActions = {
 
   fetchEvents: function() {
-    meetUpRest.fetchEvents(function(data) {
+      console.log("actions fetch events");
+      meetUpRest.fetchEvents(function(data) {
       // console.log(data);
 
       AppDispatcher.dispatch({

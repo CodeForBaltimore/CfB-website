@@ -12,6 +12,7 @@ _store.events = []
 
 
 function loadEvents(data) {
+  console.log("store loadEvents", data.length);
   // events from meeet up sort in ascending order by defualt
   if (data.length > 0){
     _store.events = data
@@ -48,7 +49,7 @@ var meetUpStore = assign({}, EventEmitter.prototype, {
 AppDispatcher.register(function(action) {
   // var text;
   // Define what to do for certain actions
-  console.log(action.data);
+  // console.log(action.data);
   switch(action.type) {
 
     case ActionTypes.LOAD_EVENTS:
@@ -60,9 +61,10 @@ AppDispatcher.register(function(action) {
   }
 
   // If action was acted upon, emit change event
+  console.log("time to emit a change");
   meetUpStore.emitChange();
-
   return true;
+
 
 });
 
