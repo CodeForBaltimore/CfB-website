@@ -10,7 +10,7 @@ var meetUpActions = {
   fetchEvents: function() {
       console.log("actions fetch events");
       meetUpRest.fetchEvents(function(data) {
-      // console.log(data);
+      console.log(data);
 
       AppDispatcher.dispatch({
         type: ActionTypes.LOAD_EVENTS,

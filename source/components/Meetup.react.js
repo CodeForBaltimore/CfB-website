@@ -25,20 +25,24 @@ var NAME = React.createClass({
     console.log("component get events");
     var events = meetUpStore.getEvents()
     console.log(events);
-    var current = events[0]
-    var d = new Date(0);
-    d.setUTCSeconds(current.time);
-    this.setState({
-      events:events,
-      nextEvent:current.id,
-      eventMonth:d.getMonth(),
-      eventDay:d.getDate(),
-      eventWeekday:d.getDay(),
-      prettyDate:d.toDateString(),
-      yesRsvpCount:current.yes_rsvp_count,
-      eventDescription:current.description
-    });
-    console.log("state updated");
+    if (events.length > 0){
+      var current = events[0]
+      var d = new Date(0);
+      d.setUTCSeconds(current.time);
+      this.setState({
+        events:events,
+        nextEvent:current.id,
+        eventMonth:d.getMonth(),
+        eventDay:d.getDate(),
+        eventWeekday:d.getDay(),
+        prettyDate:d.toDateString(),
+        yesRsvpCount:current.yes_rsvp_count,
+        eventDescription:current.description
+      });
+      console.log("state updated");
+
+    }
+
   },
 
   //default API ----------------
