@@ -1,3 +1,7 @@
+#build files
+*client.js
+*style.css
+
 # Logs
 logs
 *.log

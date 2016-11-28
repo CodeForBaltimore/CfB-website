@@ -41040,79 +41040,85 @@ var NAME = React.createClass({
 
   render: function render() {
     console.log("render state", this.state);
-    return React.createElement(
-      Row,
-      { style: meetupRow },
-      React.createElement(
-        Col,
-        { xs: 6, md: 2, style: meetupCalendar, className: "pull-left" },
+
+    if (this.state.nextEvent.length > 0) {
+
+      return React.createElement(
+        Row,
+        { style: meetupRow },
         React.createElement(
-          "div",
-          { style: meetupCalContainer },
+          Col,
+          { xs: 6, md: 2, style: meetupCalendar, className: "pull-left" },
           React.createElement(
             "div",
-            { style: meetupMonth },
-            this.state.eventMonth
-          ),
-          React.createElement(
-            "div",
-            { style: meetupCalBody },
+            { style: meetupCalContainer },
             React.createElement(
               "div",
-              { style: meetupDay },
-              this.state.eventDay
+              { style: meetupMonth },
+              this.state.eventMonth
             ),
             React.createElement(
               "div",
-              { style: meetupWeekday },
-              this.state.eventWeekday
+              { style: meetupCalBody },
+              React.createElement(
+                "div",
+                { style: meetupDay },
+                this.state.eventDay
+              ),
+              React.createElement(
+                "div",
+                { style: meetupWeekday },
+                this.state.eventWeekday
+              )
             )
           )
-        )
-      ),
-      React.createElement(
-        "div",
-        { className: "flex-container" },
+        ),
         React.createElement(
           "div",
-          { style: {} },
+          { className: "flex-container" },
           React.createElement(
             "div",
-            { style: date },
-            this.state.prettyDate
-          ),
-          React.createElement(
-            "a",
-            { href: "https://www.meetup.com/Code-for-Baltimore/events/" + this.state.nextEvent, target: "_blank" },
-            this.state.eventName
-          ),
-          React.createElement(
-            "div",
-            { style: description },
+            { style: {} },
             React.createElement(
               "div",
-              null,
-              this.state.eventDescription
-            )
-          ),
-          React.createElement(
-            "div",
-            { style: rsvp },
+              { style: date },
+              this.state.prettyDate
+            ),
             React.createElement(
               "a",
-              { style: rsvpA, href: "https://www.meetup.com/Code-for-Baltimore/events/" + this.state.nextEvent, "data-event": this.state.nextEvent },
-              "RSVP on Meetup.com"
+              { href: "https://www.meetup.com/Code-for-Baltimore/events/" + this.state.nextEvent, target: "_blank" },
+              this.state.eventName
             ),
             React.createElement(
-              "span",
-              { style: rsvpCount },
-              this.state.yesRsvpCount,
-              " RSVPs"
+              "div",
+              { style: description },
+              React.createElement(
+                "div",
+                null,
+                this.state.eventDescription
+              )
+            ),
+            React.createElement(
+              "div",
+              { style: rsvp },
+              React.createElement(
+                "a",
+                { style: rsvpA, href: "https://www.meetup.com/Code-for-Baltimore/events/" + this.state.nextEvent, "data-event": this.state.nextEvent },
+                "RSVP on Meetup.com"
+              ),
+              React.createElement(
+                "span",
+                { style: rsvpCount },
+                this.state.yesRsvpCount,
+                " RSVPs"
+              )
             )
           )
         )
-      )
-    );
+      );
+    } else {
+      return React.createElement(Row, null);
+    }
   },
 
   //componentDidUpdate: function(){},
@@ -41276,17 +41282,20 @@ module.exports = {
       method: 'GET',
       mode: "no-cors",
       headers: {
+        'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
     };
 
-    fetch('https://api.meetup.com/Code-for-Baltimore/events', options).then(function (response) {
-      if (response.status >= 400) {
-        throw new Error("Bad response from server");
-      }
-      return response.json();
-    }).then(function (events) {
-      callback(events);
+    var url = 'https://api.meetup.com/Code-for-Baltimore/events';
+
+    fetch(url, options).then(function (response) {
+      return response.text();
+    }).then(function (data) {
+      console.log(data);
+      // callback(data)
+    }).catch(function (err) {
+      console.log("Booo", err);
     });
   }
 

@@ -83,10 +83,12 @@ var NAME = React.createClass({
 
   render: function() {
     console.log("render state", this.state);
-    return (
 
 
-        <Row style={meetupRow}>
+      if (this.state.nextEvent.length > 0) {
+
+
+        return (<Row style={meetupRow}>
           <Col xs={6} md={2} style={meetupCalendar} className="pull-left">
             <div style={meetupCalContainer}>
               <div style={meetupMonth}>
@@ -120,11 +122,14 @@ var NAME = React.createClass({
               </div>
             </div>
           </div>
-        </Row>
+        </Row>)
+      }else{
+        return <Row></Row>
+      }
 
 
 
-    );
+
 
   },
 

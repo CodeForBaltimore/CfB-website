@@ -15,18 +15,16 @@ module.exports={
       }
     }
 
-    fetch('https://api.meetup.com/Code-for-Baltimore/events', options)
-        .then(function(response) {
-            if (response.status >= 400) {
-                throw new Error("Bad response from server");
-            }
-            console.log("respose",response);
-            return response.json()
-        })
-        .then(function(events) {
-            console.log("events",events);
-            callback(events)
-        });
+    var url = 'https://api.meetup.com/Code-for-Baltimore/events'
+
+    fetch(url, options).then(function(response) {
+      return response.body;
+    }).then(function(data) {
+      console.log(data);
+      callback(data)
+    }).catch(function(err) {
+      console.log("Booo",err);
+    });
 
   }
 
