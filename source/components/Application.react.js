@@ -41,7 +41,8 @@ var Application = React.createClass({
           <Header
             subHeaderText="Hack Local"
             headerText = "Code for Baltimore"
-            imgSrc = "/images/CfB_Final.png"
+            imgHeaderSrc = "/images/Banner.png"
+            imgLogoSrc = "/images/CfB_Final.png"
             />
           <CoreContent />
 

@@ -40606,7 +40606,8 @@ var Application = React.createClass({
         React.createElement(Header, {
           subHeaderText: 'Hack Local',
           headerText: 'Code for Baltimore',
-          imgSrc: '/images/CfB_Final.png'
+          imgHeaderSrc: '/images/Banner.png',
+          imgLogoSrc: '/images/CfB_Final.png'
         }),
         React.createElement(CoreContent, null),
         React.createElement(
@@ -40743,10 +40744,6 @@ var JoinUs = require('./JoinUs.react');
 var Featured = require('./Featured.react');
 var Photos = require('./Photos.react');
 
-var rowStyle = {
-  maxHeight: "500px"
-};
-
 var NAME = React.createClass({
   displayName: 'NAME',
 
@@ -40776,34 +40773,26 @@ var NAME = React.createClass({
     var featured = React.createElement(Featured, null);
 
     return React.createElement(
-      'div',
-      { className: 'container-fluid' },
-      React.createElement(
-        Row,
-        { style: rowStyle },
-        React.createElement(ContentCard, {
-          headerText: 'Our Next Meetup',
-          content: meetupData
-        }),
-        React.createElement(ContentCard, {
-          headerText: 'Event Photos',
-          content: photos,
-          footerText: '...Coming Soon'
-        })
-      ),
-      React.createElement(
-        Row,
-        { style: rowStyle },
-        React.createElement(ContentCard, {
-          headerText: 'Featured Projects',
-          content: featured,
-          footerText: '...Coming Soon'
-        }),
-        React.createElement(ContentCard, {
-          headerText: 'Code For America',
-          content: ''
-        })
-      )
+      Row,
+      null,
+      React.createElement(ContentCard, {
+        headerText: 'Our Next Meetup',
+        content: meetupData
+      }),
+      React.createElement(ContentCard, {
+        headerText: 'Event Photos',
+        content: photos,
+        footerText: '...Coming Soon'
+      }),
+      React.createElement(ContentCard, {
+        headerText: 'Featured Projects',
+        content: featured,
+        footerText: '...Coming Soon'
+      }),
+      React.createElement(ContentCard, {
+        headerText: 'Code For America',
+        content: ''
+      })
     );
   }
 
@@ -40877,6 +40866,11 @@ var headerStyle = {
   margin: '20px 10px'
 };
 
+var imageStyle = {
+  height: "auto",
+  width: "110%"
+};
+
 var Header = React.createClass({
   displayName: 'Header',
 
@@ -40889,24 +40883,25 @@ var Header = React.createClass({
 
   render: function render() {
     return React.createElement(
-      Jumbotron,
-      null,
+      Row,
+      { style: { height: "auto" } },
+      React.createElement('img', { style: imageStyle, src: this.props.imgHeaderSrc }),
       React.createElement(
         Row,
-        null,
+        { style: { top: "0px", position: "absolute" } },
         React.createElement(
           Col,
-          { xs: 12, md: 4 },
-          React.createElement('img', { style: { width: "100%" }, src: this.props.imgSrc })
-        ),
-        React.createElement(
-          'h1',
-          null,
-          this.props.headerText
+          { xs: 4, md: 4 },
+          React.createElement('img', { style: { width: "100%" }, src: this.props.imgLogoSrc })
         ),
         React.createElement(
           Col,
-          { xs: 12, md: 4 },
+          { xs: 8, md: 8 },
+          React.createElement(
+            'h1',
+            null,
+            this.props.headerText
+          ),
           React.createElement(
             'p',
             { style: { color: "#f5931e", fontWeight: "bold", fontSize: "2em" } },

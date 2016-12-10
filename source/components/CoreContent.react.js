@@ -7,9 +7,7 @@ var JoinUs = require('./JoinUs.react');
 var Featured = require('./Featured.react');
 var Photos = require('./Photos.react');
 
-const rowStyle={
-  maxHeight:"500px"
-}
+
 
 var NAME = React.createClass({
 
@@ -38,22 +36,19 @@ var NAME = React.createClass({
     var featured = <Featured />
 
     return (
-      <div className='container-fluid'>
-      <Row style={rowStyle}>
-          <ContentCard
-            headerText="Our Next Meetup"
-            content={meetupData}
-          />
+      <Row>
+      
+        <ContentCard
+          headerText="Our Next Meetup"
+          content={meetupData}
+        />
 
-          <ContentCard
-            headerText="Event Photos"
-            content={photos}
-            footerText="...Coming Soon"
-          />
+        <ContentCard
+          headerText="Event Photos"
+          content={photos}
+          footerText="...Coming Soon"
+        />
 
-      </Row>
-
-      <Row style={rowStyle}>
         <ContentCard
           headerText="Featured Projects"
           content={featured}
@@ -65,11 +60,7 @@ var NAME = React.createClass({
           content=""
         />
 
-
-
-
       </Row>
-      </div>
     );
 
   }
