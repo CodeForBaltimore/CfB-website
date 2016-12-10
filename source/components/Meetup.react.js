@@ -4,19 +4,53 @@ var meetUpStore = require("../stores/meetUp.store.js")
 var Col = require('react-bootstrap').Col;
 var Row = require('react-bootstrap').Row;
 
-const meetupRow = { padding: "20px 5%", borderBottom:"1px solid #e5e5e6" }
-const date = { color: "#5D5D5D" }
+const date = { color: "#3d5a6c" }
 const meetupCalendar = { flex:1, maxWidth: "120px" }
-const meetupCalContainer = { width: "100px", margin: "3px 20px 10px 0", border: "1px solid #c8c8c8", boxShadow: "0px 1px 3px rgba(195, 193, 193, 0.8)", textAlign: "center", float: "left" }
-const meetupMonth = { background: "#f5931e", color: "#FFFFFF", fontSize: "24px" }
+const meetupCalContainer = {
+  width: "100px",
+
+  textAlign: "center",
+  float: "left",
+  backgroundColor:"#fdf9f6"
+}
+const meetupMonth = { background: "#3d5a6c", color: "#fdf9f6", fontSize: "24px" }
 const meetupCalBody = { paddingBottom: "5px" }
 const meetupDay = { fontSize: "36px" }
 const meetupWeekday = { fontSize: "14px", marginTop: "-5px" }
-const description = { textAlign:"left", color: "#5D5D5D", padding: "10px 0", maxHeight: "100px", fontSize: "1.1em", position: "relative", overflow: "hidden" }
-const title ={ color: "#5D5D5D", padding: "10px 0", maxHeight: "123.5px", fontSize: "1.5em", position: "relative", overflow: "hidden" }
-const rsvp = { display: "block", fontSize: "13px", margin: "0 0 10px", zIndex: 2, position: "relative" }
-const rsvpA = { background: "#FFFFFF", padding: "5px 10px", borderRadius: "3px", textDecoration: "none", border: "1px solid #e0393e", color: "#e0393e"}
-const rsvpCount = { color: "#5D5D5D", marginLeft: "10px" }
+const description = {
+  textAlign:"left",
+  color: "#fdf9f6",
+  maxHeight: "100px",
+  fontSize: "1.3em",
+  overflow: "ellipsis",
+  fontFamily:"sans-serif",
+  fontWeight:"lighter",
+  maxHeight:"100px"
+}
+const title ={
+  color: "#3d5a6c",
+  maxHeight: "123.5px",
+  fontSize: "2em",
+  overflow: "hidden",
+  fontFamily:"Futura",
+  fontWeight:"bold",
+  textAlign:"left"
+}
+
+const rsvpA = {
+  marginTop:"5px",
+  textDecoration: "none",
+  color: "#3d5a6c",
+  maxHeight:"30px",
+  textAlign:"left",
+  fontFamily:"sans-serif",
+  fontWeight:"normal"
+}
+const rsvpCount = {
+  color: "#3d5a6c",
+  fontFamily:"sans-serif",
+  textAlign:"left"
+}
 const showMe = {border:"1px solid blue"}
 
 var months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
@@ -95,8 +129,9 @@ var Meetup = React.createClass({
 
 
         return (
-        <Row style={meetupRow}>
-          <Col xs={3} md={5} >
+        <Row >
+          <Col xs={5} sm={4} md={3} >
+            <center>
             <div style={meetupCalendar} className="pull-left">
               <div style={meetupCalContainer}>
                 <div style={meetupMonth}>
@@ -112,21 +147,24 @@ var Meetup = React.createClass({
                 </div>
               </div>
             </div>
+            </center>
           </Col>
 
-          <Col xs={8} md={6}  className="pull-right">
-              <div style={title}> {this.state.name} </div>
-              <div style={description} dangerouslySetInnerHTML={{__html: this.state.eventDescription}}></div>
-
+          <Col xs={7} sm={8} md={9}  className="pull-left">
+            <div style={title}> {this.state.name} </div>
+            <div style={description} dangerouslySetInnerHTML={{__html: this.state.eventDescription}}></div>
           </Col>
-          <Col xs={12} md={12} >
-            <Row >
-              <Col xs={12}  style={rsvpCount}>{this.state.yesRsvpCount} RSVPs</Col>
-            </Row><br /><Row>
-              <Col xs={12} >
-                <a  style={rsvpA} href={"https://www.meetup.com/Code-for-Baltimore/events/"+this.state.nextEvent} data-event={this.state.nextEvent}>RSVP on Meetup.com</a>
-              </Col>
-            </Row>
+          <Col xs={12} sm={8} md={9}  className="pull-right">
+            <div style={rsvpA}>
+              <a  style={{color:"#fdf9f6"}} href={"https://www.meetup.com/Code-for-Baltimore/events/"+this.state.nextEvent} data-event={this.state.nextEvent}>
+                RSVP ON MEETUP.COM
+                <img src="/images/Arrow_Blue.png" style={{height:"25px"}}/>
+              </a>
+
+            </div>
+            <div style={rsvpCount}>
+            {this.state.yesRsvpCount} RSVPs
+            </div>
           </Col>
 
         </Row>)

@@ -3,10 +3,12 @@ var Col = require('react-bootstrap').Col;
 var Row = require('react-bootstrap').Row;
 
 const headerStyle ={
+  marginTop:"20px",
+  marginBottom:"0px",
   fontSize:"2em",
   color:"#fdf9f6",
   fontFamily:"Futura",
-  fontWeight: 'medium'
+  fontWeight: 'bold'
 }
 
 const subHeaderStyle ={
@@ -28,6 +30,12 @@ const cardStyle ={
   minHeight:"200px",
   height:"auto",
   marginBottom:"30px"
+}
+
+const barStyle={
+  backgroundColor:"#fdf9f6",
+  width:"110%",
+  height:"5px"
 }
 
 
@@ -63,7 +71,13 @@ var NAME = React.createClass({
         <div style={cardStyle}>
           <Row><Col xs={12} style={headerStyle}>{this.props.headerText}</Col> </Row>
           <Row><Col xs={12} style={subHeaderStyle}>{this.props.subHeaderText}</Col> </Row>
-
+          {this.props.showBar ?
+            <Row style={barStyle}>
+              <Col xs={12} ><br /></Col>
+            </Row>
+            :
+            <Row></Row>
+          }
           <Row>
             <Col xs={12}>
               {this.props.content}

@@ -40645,10 +40645,12 @@ var Col = require('react-bootstrap').Col;
 var Row = require('react-bootstrap').Row;
 
 var headerStyle = {
+  marginTop: "20px",
+  marginBottom: "0px",
   fontSize: "2em",
   color: "#fdf9f6",
   fontFamily: "Futura",
-  fontWeight: 'medium'
+  fontWeight: 'bold'
 };
 
 var subHeaderStyle = {
@@ -40670,6 +40672,12 @@ var cardStyle = {
   minHeight: "200px",
   height: "auto",
   marginBottom: "30px"
+};
+
+var barStyle = {
+  backgroundColor: "#fdf9f6",
+  width: "110%",
+  height: "5px"
 };
 
 var NAME = React.createClass({
@@ -40722,6 +40730,15 @@ var NAME = React.createClass({
         ),
         ' '
       ),
+      this.props.showBar ? React.createElement(
+        Row,
+        { style: barStyle },
+        React.createElement(
+          Col,
+          { xs: 12 },
+          React.createElement('br', null)
+        )
+      ) : React.createElement(Row, null),
       React.createElement(
         Row,
         null,
@@ -40803,6 +40820,7 @@ var NAME = React.createClass({
         React.createElement(ContentCard, {
           headerText: 'MEETUPS',
           subHeaderText: 'what\'s up next?',
+          showBar: true,
           align: 'left',
           content: meetupData
         }),
@@ -40827,6 +40845,7 @@ var NAME = React.createClass({
         React.createElement(ContentCard, {
           headerText: 'PARTNERS',
           subHeaderText: 'meet our friends',
+          showBar: true,
           align: 'right',
           content: ''
         })
@@ -40835,8 +40854,8 @@ var NAME = React.createClass({
         Col,
         { md: 6, xs: 12 },
         React.createElement(ContentCard, {
-          headerText: 'Code For America',
-          subHeaderText: 'our inspiration',
+          headerText: 'Code of Conduct',
+          subHeaderText: 'our guide',
           align: 'right',
           content: ''
         })
@@ -40909,7 +40928,7 @@ var Row = require('react-bootstrap').Row;
 
 var headerStyle = {
   fontSize: "2.7em",
-  fontWeight: 'medium',
+  fontWeight: 'bold',
   color: "#333333",
   marginRight: "30px",
   textAlign: "left",
@@ -41042,25 +41061,60 @@ module.exports = NAME;
 },{"react":431}],446:[function(require,module,exports){
 "use strict";
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var React = require('react');
 var meetUpActions = require("../actions/meetUp.actions.js");
 var meetUpStore = require("../stores/meetUp.store.js");
 var Col = require('react-bootstrap').Col;
 var Row = require('react-bootstrap').Row;
 
-var meetupRow = { padding: "20px 5%", borderBottom: "1px solid #e5e5e6" };
-var date = { color: "#5D5D5D" };
+var date = { color: "#3d5a6c" };
 var meetupCalendar = { flex: 1, maxWidth: "120px" };
-var meetupCalContainer = { width: "100px", margin: "3px 20px 10px 0", border: "1px solid #c8c8c8", boxShadow: "0px 1px 3px rgba(195, 193, 193, 0.8)", textAlign: "center", float: "left" };
-var meetupMonth = { background: "#f5931e", color: "#FFFFFF", fontSize: "24px" };
+var meetupCalContainer = {
+  width: "100px",
+
+  textAlign: "center",
+  float: "left",
+  backgroundColor: "#fdf9f6"
+};
+var meetupMonth = { background: "#3d5a6c", color: "#fdf9f6", fontSize: "24px" };
 var meetupCalBody = { paddingBottom: "5px" };
 var meetupDay = { fontSize: "36px" };
 var meetupWeekday = { fontSize: "14px", marginTop: "-5px" };
-var description = { textAlign: "left", color: "#5D5D5D", padding: "10px 0", maxHeight: "100px", fontSize: "1.1em", position: "relative", overflow: "hidden" };
-var title = { color: "#5D5D5D", padding: "10px 0", maxHeight: "123.5px", fontSize: "1.5em", position: "relative", overflow: "hidden" };
-var rsvp = { display: "block", fontSize: "13px", margin: "0 0 10px", zIndex: 2, position: "relative" };
-var rsvpA = { background: "#FFFFFF", padding: "5px 10px", borderRadius: "3px", textDecoration: "none", border: "1px solid #e0393e", color: "#e0393e" };
-var rsvpCount = { color: "#5D5D5D", marginLeft: "10px" };
+var description = _defineProperty({
+  textAlign: "left",
+  color: "#fdf9f6",
+  maxHeight: "100px",
+  fontSize: "1.3em",
+  overflow: "ellipsis",
+  fontFamily: "sans-serif",
+  fontWeight: "lighter"
+}, "maxHeight", "100px");
+var title = {
+  color: "#3d5a6c",
+  maxHeight: "123.5px",
+  fontSize: "2em",
+  overflow: "hidden",
+  fontFamily: "Futura",
+  fontWeight: "bold",
+  textAlign: "left"
+};
+
+var rsvpA = {
+  marginTop: "5px",
+  textDecoration: "none",
+  color: "#3d5a6c",
+  maxHeight: "30px",
+  textAlign: "left",
+  fontFamily: "sans-serif",
+  fontWeight: "normal"
+};
+var rsvpCount = {
+  color: "#3d5a6c",
+  fontFamily: "sans-serif",
+  textAlign: "left"
+};
 var showMe = { border: "1px solid blue" };
 
 var months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
@@ -41136,33 +41190,37 @@ var Meetup = React.createClass({
 
       return React.createElement(
         Row,
-        { style: meetupRow },
+        null,
         React.createElement(
           Col,
-          { xs: 3, md: 5 },
+          { xs: 5, sm: 4, md: 3 },
           React.createElement(
-            "div",
-            { style: meetupCalendar, className: "pull-left" },
+            "center",
+            null,
             React.createElement(
               "div",
-              { style: meetupCalContainer },
+              { style: meetupCalendar, className: "pull-left" },
               React.createElement(
                 "div",
-                { style: meetupMonth },
-                months[this.state.eventMonth]
-              ),
-              React.createElement(
-                "div",
-                { style: meetupCalBody },
+                { style: meetupCalContainer },
                 React.createElement(
                   "div",
-                  { style: meetupDay },
-                  this.state.eventDay
+                  { style: meetupMonth },
+                  months[this.state.eventMonth]
                 ),
                 React.createElement(
                   "div",
-                  { style: meetupWeekday },
-                  weekday[this.state.eventWeekday]
+                  { style: meetupCalBody },
+                  React.createElement(
+                    "div",
+                    { style: meetupDay },
+                    this.state.eventDay
+                  ),
+                  React.createElement(
+                    "div",
+                    { style: meetupWeekday },
+                    weekday[this.state.eventWeekday]
+                  )
                 )
               )
             )
@@ -41170,7 +41228,7 @@ var Meetup = React.createClass({
         ),
         React.createElement(
           Col,
-          { xs: 8, md: 6, className: "pull-right" },
+          { xs: 7, sm: 8, md: 9, className: "pull-left" },
           React.createElement(
             "div",
             { style: title },
@@ -41182,30 +41240,22 @@ var Meetup = React.createClass({
         ),
         React.createElement(
           Col,
-          { xs: 12, md: 12 },
+          { xs: 12, sm: 8, md: 9, className: "pull-right" },
           React.createElement(
-            Row,
-            null,
+            "div",
+            { style: rsvpA },
             React.createElement(
-              Col,
-              { xs: 12, style: rsvpCount },
-              this.state.yesRsvpCount,
-              " RSVPs"
+              "a",
+              { style: { color: "#fdf9f6" }, href: "https://www.meetup.com/Code-for-Baltimore/events/" + this.state.nextEvent, "data-event": this.state.nextEvent },
+              "RSVP ON MEETUP.COM",
+              React.createElement("img", { src: "/images/Arrow_Blue.png", style: { height: "25px" } })
             )
           ),
-          React.createElement("br", null),
           React.createElement(
-            Row,
-            null,
-            React.createElement(
-              Col,
-              { xs: 12 },
-              React.createElement(
-                "a",
-                { style: rsvpA, href: "https://www.meetup.com/Code-for-Baltimore/events/" + this.state.nextEvent, "data-event": this.state.nextEvent },
-                "RSVP on Meetup.com"
-              )
-            )
+            "div",
+            { style: rsvpCount },
+            this.state.yesRsvpCount,
+            " RSVPs"
           )
         )
       );

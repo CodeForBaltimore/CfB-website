@@ -6,7 +6,7 @@ var Row = require('react-bootstrap').Row;
 
 const headerStyle = {
   fontSize:"2.7em",
-  fontWeight: 'medium',
+  fontWeight: 'bold',
   color:"#333333",
   marginRight:"30px",
   textAlign:"left",

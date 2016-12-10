@@ -43,6 +43,7 @@ var NAME = React.createClass({
         <ContentCard
           headerText="MEETUPS"
           subHeaderText="what's up next?"
+          showBar={true}
           align="left"
           content={meetupData}
         />
@@ -71,6 +72,7 @@ var NAME = React.createClass({
         <ContentCard
           headerText="PARTNERS"
           subHeaderText="meet our friends"
+          showBar={true}
           align="right"
           content=""
         />
@@ -80,9 +82,9 @@ var NAME = React.createClass({
         <Col md={6} xs={12}>
 
             <ContentCard
-              headerText="Code For America"
-              subHeaderText="our inspiration"
-          align="right"
+              headerText="Code of Conduct"
+              subHeaderText="our guide"
+              align="right"
               content=""
             />
 
