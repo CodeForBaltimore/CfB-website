@@ -3,6 +3,9 @@ var Header = require('./Header.react');
 var CoreContent = require('./CoreContent.react');
 
 
+const appStyle = {
+  backgroundColor:"#fdf9f6"
+}
 
 var Application = React.createClass({
 
@@ -36,11 +39,11 @@ var Application = React.createClass({
 
   render: function() {
     return (
-      <div className="container-fluid">
+      <div style={appStyle} className="container-fluid">
         <center>
           <Header
             subHeaderText="Hack Local"
-            headerText = "Code for Baltimore"
+            headerText = "CODE FOR BALTIMORE"
             imgHeaderSrc = "/images/Banner.png"
             imgLogoSrc = "/images/CfB_Final.png"
             />

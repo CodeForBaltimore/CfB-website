@@ -40564,6 +40564,10 @@ var React = require('react');
 var Header = require('./Header.react');
 var CoreContent = require('./CoreContent.react');
 
+var appStyle = {
+  backgroundColor: "#fdf9f6"
+};
+
 var Application = React.createClass({
   displayName: 'Application',
 
@@ -40599,13 +40603,13 @@ var Application = React.createClass({
   render: function render() {
     return React.createElement(
       'div',
-      { className: 'container-fluid' },
+      { style: appStyle, className: 'container-fluid' },
       React.createElement(
         'center',
         null,
         React.createElement(Header, {
           subHeaderText: 'Hack Local',
-          headerText: 'Code for Baltimore',
+          headerText: 'CODE FOR BALTIMORE',
           imgHeaderSrc: '/images/Banner.png',
           imgLogoSrc: '/images/CfB_Final.png'
         }),
@@ -40642,22 +40646,30 @@ var Row = require('react-bootstrap').Row;
 
 var headerStyle = {
   fontSize: "2em",
-  color: "#4e4e4e"
+  color: "#fdf9f6",
+  fontFamily: "Futura",
+  fontWeight: 'medium'
+};
+
+var subHeaderStyle = {
+  fontFamily: "sans-serif",
+  fontWeight: 'lighter',
+  fontSize: "1.5em",
+  color: "#fdf9f6"
 };
 
 var footerStyle = {
   position: "absolute",
   bottom: "25px",
   fontSize: "0.8em",
-  color: "#f5931e"
+  color: "#fdf9f6"
 };
 var cardStyle = {
-  backgroundColor: "#eee",
+  backgroundColor: "#f4921f",
   padding: "1em",
-  margin: "1em",
-  borderRadius: "1em",
   minHeight: "200px",
-  height: "auto"
+  height: "auto",
+  marginBottom: "30px"
 };
 
 var NAME = React.createClass({
@@ -40683,42 +40695,52 @@ var NAME = React.createClass({
   //componentWillUpdate: function(){},
 
   render: function render() {
+
+    headerStyle["textAlign"] = this.props.align;
+    subHeaderStyle["textAlign"] = this.props.align;
+
     return React.createElement(
-      Col,
-      { md: 6, xs: 12 },
+      'div',
+      { style: cardStyle },
       React.createElement(
-        'div',
-        { style: cardStyle },
+        Row,
+        null,
         React.createElement(
-          Row,
-          null,
-          React.createElement(
-            Col,
-            { xs: 12, style: headerStyle },
-            this.props.headerText
-          ),
-          ' '
+          Col,
+          { xs: 12, style: headerStyle },
+          this.props.headerText
         ),
+        ' '
+      ),
+      React.createElement(
+        Row,
+        null,
         React.createElement(
-          Row,
-          null,
-          React.createElement(
-            Col,
-            { xs: 12 },
-            this.props.content
-          )
+          Col,
+          { xs: 12, style: subHeaderStyle },
+          this.props.subHeaderText
         ),
-        this.props.footerText != undefined ? React.createElement(
-          Row,
-          { style: footerStyle },
-          React.createElement(
-            Col,
-            { xs: 12 },
-            this.props.footerText
-          ),
-          ' '
-        ) : undefined
-      )
+        ' '
+      ),
+      React.createElement(
+        Row,
+        null,
+        React.createElement(
+          Col,
+          { xs: 12 },
+          this.props.content
+        )
+      ),
+      this.props.footerText != undefined ? React.createElement(
+        Row,
+        { style: footerStyle },
+        React.createElement(
+          Col,
+          { xs: 12 },
+          this.props.footerText
+        ),
+        ' '
+      ) : undefined
     );
   }
 
@@ -40774,25 +40796,51 @@ var NAME = React.createClass({
 
     return React.createElement(
       Row,
-      null,
-      React.createElement(ContentCard, {
-        headerText: 'Our Next Meetup',
-        content: meetupData
-      }),
-      React.createElement(ContentCard, {
-        headerText: 'Event Photos',
-        content: photos,
-        footerText: '...Coming Soon'
-      }),
-      React.createElement(ContentCard, {
-        headerText: 'Featured Projects',
-        content: featured,
-        footerText: '...Coming Soon'
-      }),
-      React.createElement(ContentCard, {
-        headerText: 'Code For America',
-        content: ''
-      })
+      { style: { marginTop: "30px" } },
+      React.createElement(
+        Col,
+        { md: 6, xs: 12 },
+        React.createElement(ContentCard, {
+          headerText: 'MEETUPS',
+          subHeaderText: 'what\'s up next?',
+          align: 'left',
+          content: meetupData
+        }),
+        React.createElement(ContentCard, {
+          headerText: 'PHOTOS',
+          subHeaderText: 'see the awesome.',
+          align: 'left',
+          content: photos,
+          footerText: '...Coming Soon'
+        })
+      ),
+      React.createElement(
+        Col,
+        { md: 6, xs: 12 },
+        React.createElement(ContentCard, {
+          headerText: 'PROJECTS',
+          subHeaderText: 'what\'s hot?',
+          align: 'right',
+          content: featured,
+          footerText: '...Coming Soon'
+        }),
+        React.createElement(ContentCard, {
+          headerText: 'PARTNERS',
+          subHeaderText: 'meet our friends',
+          align: 'right',
+          content: ''
+        })
+      ),
+      React.createElement(
+        Col,
+        { md: 6, xs: 12 },
+        React.createElement(ContentCard, {
+          headerText: 'Code For America',
+          subHeaderText: 'our inspiration',
+          align: 'right',
+          content: ''
+        })
+      )
     );
   }
 
@@ -40860,15 +40908,37 @@ var Col = require('react-bootstrap').Col;
 var Row = require('react-bootstrap').Row;
 
 var headerStyle = {
-  fontSize: '16px',
-  fontWeight: '300',
-  display: 'inline-block',
-  margin: '20px 10px'
+  fontSize: "2.7em",
+  fontWeight: 'medium',
+  color: "#333333",
+  marginRight: "30px",
+  textAlign: "left",
+  fontFamily: "Futura",
+  marginBottom: "2px"
+
+};
+
+var altHeaderStyle = {
+  fontFamily: "Futura",
+  fontSize: "2.5em",
+  fontWeight: 'medium',
+  color: "black",
+  marginRight: "30px",
+  textAlign: "center"
+};
+
+var subHeaderStyle = {
+  fontSize: "2.5em",
+  fontWeight: 'lighter',
+  color: "#f4921f",
+  textAlign: "left",
+  fontFamily: "sans-serif",
+  marginTop: "0px"
 };
 
 var imageStyle = {
   height: "auto",
-  width: "110%"
+  width: "100%"
 };
 
 var Header = React.createClass({
@@ -40892,20 +40962,33 @@ var Header = React.createClass({
         React.createElement(
           Col,
           { xs: 4, md: 4 },
-          React.createElement('img', { style: { width: "100%" }, src: this.props.imgLogoSrc })
+          React.createElement('img', { style: { width: "100%", margin: "5px" }, src: this.props.imgLogoSrc })
         ),
         React.createElement(
           Col,
-          { xs: 8, md: 8 },
+          { xsHidden: true, md: 7, className: 'pull-right' },
           React.createElement(
             'h1',
-            null,
+            { style: headerStyle },
             this.props.headerText
           ),
           React.createElement(
-            'p',
-            { style: { color: "#f5931e", fontWeight: "bold", fontSize: "2em" } },
+            'h2',
+            { style: subHeaderStyle },
             this.props.subHeaderText
+          )
+        )
+      ),
+      React.createElement(
+        Row,
+        null,
+        React.createElement(
+          Col,
+          { mdHidden: true, smHidden: true, lgHidden: true, xs: 12 },
+          React.createElement(
+            'h1',
+            { style: altHeaderStyle },
+            this.props.headerText
           )
         )
       )

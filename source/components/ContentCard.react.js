@@ -4,22 +4,30 @@ var Row = require('react-bootstrap').Row;
 
 const headerStyle ={
   fontSize:"2em",
-  color:"#4e4e4e"
+  color:"#fdf9f6",
+  fontFamily:"Futura",
+  fontWeight: 'medium'
+}
+
+const subHeaderStyle ={
+  fontFamily:"sans-serif",
+  fontWeight: 'lighter',
+  fontSize:"1.5em",
+  color:"#fdf9f6"
 }
 
 const footerStyle={
   position:"absolute",
   bottom:"25px",
   fontSize:"0.8em",
-  color:"#f5931e"
+  color:"#fdf9f6"
 }
 const cardStyle ={
-  backgroundColor:"#eee",
+  backgroundColor:"#f4921f",
   padding:"1em",
-  margin:"1em",
-  borderRadius:"1em",
   minHeight:"200px",
-  height:"auto"
+  height:"auto",
+  marginBottom:"30px"
 }
 
 
@@ -46,22 +54,28 @@ var NAME = React.createClass({
   //componentWillUpdate: function(){},
 
   render: function() {
+
+    headerStyle["textAlign"] = this.props.align;
+    subHeaderStyle["textAlign"] = this.props.align;
+
     return (
-      <Col md={6} xs={12}>
+
         <div style={cardStyle}>
-        <Row><Col xs={12} style={headerStyle}>{this.props.headerText}</Col> </Row>
-        <Row>
-          <Col xs={12}>
-            {this.props.content}
-          </Col>
-        </Row>
-        {this.props.footerText != undefined ?
-        <Row style={footerStyle}><Col xs={12} >{this.props.footerText}</Col> </Row>
-        : undefined }
+          <Row><Col xs={12} style={headerStyle}>{this.props.headerText}</Col> </Row>
+          <Row><Col xs={12} style={subHeaderStyle}>{this.props.subHeaderText}</Col> </Row>
+
+          <Row>
+            <Col xs={12}>
+              {this.props.content}
+            </Col>
+          </Row>
+          {this.props.footerText != undefined ?
+          <Row style={footerStyle}><Col xs={12} >{this.props.footerText}</Col> </Row>
+          : undefined }
 
         </div>
 
-      </Col>
+
     );
 
   }

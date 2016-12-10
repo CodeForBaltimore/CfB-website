@@ -36,29 +36,57 @@ var NAME = React.createClass({
     var featured = <Featured />
 
     return (
-      <Row>
-      
+      <Row style={{marginTop:"30px"}}>
+
+      <Col md={6} xs={12}>
+
         <ContentCard
-          headerText="Our Next Meetup"
+          headerText="MEETUPS"
+          subHeaderText="what's up next?"
+          align="left"
           content={meetupData}
         />
 
         <ContentCard
-          headerText="Event Photos"
+          headerText="PHOTOS"
+          subHeaderText="see the awesome."
+          align="left"
           content={photos}
           footerText="...Coming Soon"
         />
 
+
+      </Col>
+
+      <Col md={6} xs={12}>
+
         <ContentCard
-          headerText="Featured Projects"
+          headerText="PROJECTS"
+          subHeaderText="what's hot?"
+          align="right"
           content={featured}
           footerText="...Coming Soon"
         />
 
         <ContentCard
-          headerText="Code For America"
+          headerText="PARTNERS"
+          subHeaderText="meet our friends"
+          align="right"
           content=""
         />
+
+        </Col>
+
+        <Col md={6} xs={12}>
+
+            <ContentCard
+              headerText="Code For America"
+              subHeaderText="our inspiration"
+          align="right"
+              content=""
+            />
+
+        </Col>
 
       </Row>
     );

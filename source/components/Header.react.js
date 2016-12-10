@@ -5,15 +5,37 @@ var Row = require('react-bootstrap').Row;
 
 
 const headerStyle = {
-  fontSize: '16px',
-  fontWeight: '300',
-  display: 'inline-block',
-  margin: '20px 10px'
-};
+  fontSize:"2.7em",
+  fontWeight: 'medium',
+  color:"#333333",
+  marginRight:"30px",
+  textAlign:"left",
+  fontFamily:"Futura",
+  marginBottom:"2px"
+
+}
+
+const altHeaderStyle ={
+  fontFamily:"Futura",
+  fontSize:"2.5em",
+  fontWeight: 'medium',
+  color:"black",
+  marginRight:"30px",
+  textAlign:"center"
+}
+
+const subHeaderStyle={
+  fontSize:"2.5em",
+  fontWeight: 'lighter',
+  color:"#f4921f",
+  textAlign:"left",
+  fontFamily:"sans-serif",
+  marginTop:"0px"
+}
 
 const imageStyle ={
   height: "auto",
-  width: "110%",
+  width: "100%",
 }
 
 var Header = React.createClass({
@@ -30,11 +52,16 @@ var Header = React.createClass({
         <img style={imageStyle} src={this.props.imgHeaderSrc} />
         <Row style={{top:"0px",position:"absolute"}}>
           <Col xs={4} md={4}>
-            <img style={{width:"100%"}} src={this.props.imgLogoSrc} />
+            <img style={{width:"100%",margin:"5px"}} src={this.props.imgLogoSrc} />
           </Col>
-          <Col xs={8} md={8}>
-            <h1>{this.props.headerText}</h1>
-            <p style={{color:"#f5931e", fontWeight:"bold", fontSize:"2em"}}>{this.props.subHeaderText}</p>
+          <Col xsHidden={true} md={7} className="pull-right">
+            <h1 style={headerStyle}>{this.props.headerText}</h1>
+            <h2 style={subHeaderStyle}>{this.props.subHeaderText}</h2>
+          </Col>
+        </Row>
+        <Row>
+          <Col mdHidden={true} smHidden={true} lgHidden={true} xs={12}>
+            <h1 style={altHeaderStyle}>{this.props.headerText}</h1>
           </Col>
         </Row>
 
