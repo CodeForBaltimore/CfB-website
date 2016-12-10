@@ -47,7 +47,7 @@ var NAME = React.createClass({
 
   render: function() {
     return (
-      <Col md={4} xs={12}>
+      <Col md={6} xs={12}>
         <div style={cardStyle}>
         <Row><Col xs={12} style={headerStyle}>{this.props.headerText}</Col> </Row>
         <Row>

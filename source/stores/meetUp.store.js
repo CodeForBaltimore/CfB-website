@@ -12,10 +12,10 @@ _store.events = []
 
 
 function loadEvents(data) {
-  console.log("store loadEvents", data.length);
+  console.log("store loadEvents", data.results);
   // events from meeet up sort in ascending order by defualt
-  if (data.length > 0){
-    _store.events = data
+  if (data.results.length > 0){
+    _store.events = data.results
   }else{
     _store.events = []
   }

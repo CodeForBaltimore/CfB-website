@@ -1,25 +1,22 @@
 require('es6-promise').polyfill();
-require('isomorphic-fetch');
-var request = require('request');
+var fetch = require('isomorphic-fetch');
 var config = require("../../private/config.js")
-require("meetup-api")
 
 
 module.exports={
 
   fetchEvents:function(callback) {
 
-
-     var parameters ={
-       group_urlname:"Code-for-Baltimore",
-       text_format:"plain"
-     }
-
-
-     meetup.getEvents(parameters, function(err, resp) {
-        console.log(err, resp);
+    fetch('/meetups')
+    .then(function(response) {
+        if (response.status >= 400) {
+            throw new Error("Bad response from server");
+        }
+        return response.json();
+    })
+    .then(function(json) {
+        callback(json);
     });
 
-   }
-
+  }
 }

@@ -40,25 +40,23 @@ var NAME = React.createClass({
     return (
       <div className='container-fluid'>
       <Row style={rowStyle}>
-        <ContentCard
-          headerText="Join Us"
-          content={joinForm}
-        />
-        <ContentCard
-          headerText="Next Meetup"
-          content={meetupData}
-        />
-        <ContentCard
-          headerText="Featured Projects"
-          content={featured}
-          footerText="...Coming Soon"
-        />
+          <ContentCard
+            headerText="Our Next Meetup"
+            content={meetupData}
+          />
+
+          <ContentCard
+            headerText="Event Photos"
+            content={photos}
+            footerText="...Coming Soon"
+          />
+
       </Row>
 
       <Row style={rowStyle}>
         <ContentCard
-          headerText="Event Photos"
-          content={photos}
+          headerText="Featured Projects"
+          content={featured}
           footerText="...Coming Soon"
         />
 
@@ -66,6 +64,10 @@ var NAME = React.createClass({
           headerText="Code For America"
           content=""
         />
+
+
+
+
       </Row>
       </div>
     );

@@ -5,6 +5,8 @@ var fs = require('fs');
 var React = require('react');
 var ReactDOMServer = require('react-dom/server');
 var App = require('./source/Components/Application.react.js');
+var config = require("./private/config.js")
+var request = require('request');
 
 //local host only example
 var ip_addr = '127.0.0.1';
@@ -108,6 +110,35 @@ var server = function() {
       var reactHtml = ReactDOMServer.renderToString(<App />);
       res.render('index.ejs', {reactOutput: reactHtml});
     };
+
+    self.routes['/meetups'] = function(req, res) {
+
+      //TODO this will be locally cached to prevent extra calls out...
+
+      const options = {
+        url:"https://api.meetup.com/2/events?key=" + config.meetup.apiKey + "&group_urlname=Code-for-Baltimore&sign=true",
+        method: 'GET',
+        mode:"no-cors",
+        headers: {
+          'Access-Control-Allow-Origin':'*',
+          'Accept':'application/json',
+          'Content-Type': 'application/json'
+        }
+      }
+
+
+      request(options, function (error, response, body) {
+
+          // console.log(error, response, body) // Show the HTML for the Google homepage.
+
+          res.json(JSON.parse(body))
+
+      })
+
+
+
+
+    }
 
 
   };
