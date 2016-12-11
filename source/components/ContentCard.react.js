@@ -75,7 +75,7 @@ var NAME = React.createClass({
             <Row><Col xs={12} style={subHeaderStyle}>{this.props.subHeaderText}</Col> </Row>
           </Col>
 
-          <Col sm={8} xs={12} style={headerStyle} className={this.props.align =="right" ? "pull-left" :"pull-right" }>
+          <Col sm={7} xs={12} style={headerStyle} className={this.props.align =="right" ? "pull-left" :"pull-right" }>
               {this.props.headerIcons}
           </Col>
         </Row>

@@ -43,8 +43,6 @@ var NAME = React.createClass({
     var featured = <Featured />
     var connectIcons = (
       <Row>
-        <img className="pull-right" style={iconStyle} src="/images/Meetup.png"/>
-        <img className="pull-right" style={iconStyle} src="/images/Instagram.png"/>
         <img className="pull-right" style={iconStyle} src="/images/Github.png"/>
         <img className="pull-right" style={iconStyle} src="/images/Slack.png"/>
         <img className="pull-right" style={iconStyle} src="/images/Twitter.png"/>
