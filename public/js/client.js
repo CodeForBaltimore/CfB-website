@@ -40547,7 +40547,7 @@ var meetUpActions = {
 
 module.exports = meetUpActions;
 
-},{"../constants/meetUp.constants.js":448,"../dispatcher/AppDispatcher":449,"../utilities/meetUpRest.js":451}],439:[function(require,module,exports){
+},{"../constants/meetUp.constants.js":450,"../dispatcher/AppDispatcher":451,"../utilities/meetUpRest.js":453}],439:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -40637,7 +40637,56 @@ var Application = React.createClass({
 
 module.exports = Application;
 
-},{"./CoreContent.react":442,"./Header.react":444,"react":431}],441:[function(require,module,exports){
+},{"./CoreContent.react":443,"./Header.react":445,"react":431}],441:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+
+var NAME = React.createClass({
+  displayName: 'NAME',
+
+
+  //default API ----------------
+
+  //getDefaultProps: function(){
+  //    return null;
+  //},
+
+  //getInitialState: function() {},
+  //
+  //componentWillMount: function(){},
+  //
+  //componentDidMount: function(){},
+  //
+  //componentWillReceiveProps: function(){},
+
+  //shouldComponentUpdate: function(){},
+
+  //componentWillUpdate: function(){},
+
+  render: function render() {
+    return React.createElement(
+      Row,
+      null,
+      React.createElement(
+        'p',
+        null,
+        'Code for America\'s Code of Conduct The Code for America community expects that Code for America network activities, events, and digital forums: Are a safe and respectful environment for all participants. Are a place where people are free to fully express their identities. Presume the value of others. Everyone\u2019s ideas, skills, and contributions have value. Don\u2019t assume everyone has the same context, and encourage questions. Find a way for people to be productive with their skills (technical and not) and energy. Use language such as \u201Cyes/and\u201D, not \u201Cno/but.\u201D Encourage members and participants to listen as much as they speak. Strive to build tools that are open and free technology for public use. Activities that aim to foster public use, not private gain, are prioritized. Prioritize access for and input from those who are traditionally excluded from the civic process. Work to ensure that the community is well-represented in the planning, design, and implementation of civic tech. This includes encouraging participation from women, minorities, and traditionally marginalized groups. Actively involve community groups and those with subject matter expertise in the decision-making process. Ensure that the relationships and conversations between community members, the local government staff and community partners remain respectful, participatory, and productive. Provide an environment where people are free from discrimination or harassment. Code for America reserves the right to ask anyone in violation of these policies not to participate in Code for America network activities, events, and digital forums. Code for America\'s Anti-Harassment Policy This anti-harassment policy is based on the example policy from the Geek Feminism wiki, created by the Ada Initiative and other volunteers. This policy is based on several other policies, including the Ohio LinuxFest anti-harassment policy, written by Esther Filderman and Beth Lynn Eicher, and the Con Anti-Harassment Project. Mary Gardiner, Valerie Aurora, Sarah Smith, and Donna Benjamin generalized the policies and added supporting material. Many members of LinuxChix, Geek Feminism and other groups contributed to this work. All Code for America network activities, events, and digital forums and their staff, presenters, and participants are held to an anti-harassment policy, included below. In addition to governing our own events by this policy, Code for America will only lend our brand and fund groups that offer an anti-harassment policy to their attendees. For information on how to offer an anti-harassment policy to your group, see this guide. Code for America is dedicated to providing a harassment-free experience for everyone regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age, or religion. We do not tolerate harassment of staff, presenters, and participants in any form. Sexual language and imagery is not appropriate for any Code for America event or network activity, including talks. Anyone in violation of these policies may expelled from Code for America network activities, events, and digital forums, at the discretion of the event organizer or forum administrator. Harassment includes but is not limited to: offensive verbal or written comments related to gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, religion; sexual images in public spaces; deliberate intimidation; stalking; following; harassing photography or recording; sustained disruption of talks or other events; inappropriate physical contact; unwelcome sexual attention; unwarranted exclusion; and patronizing language or action. If a participant engages in harassing behavior, the organizers may take any action they deem appropriate, including warning the offender or expulsion from Code for America network activities, events, and digital forums. If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact a member of the event staff or forum administrator immediately. You can contact them at [EVENT ORGANIZER/FORUM ADMINISTRATOR EMAIL AND PHONE NUMBER]. Event staff or forum administrators will be happy to help participants contact hotel/venue security or local law enforcement, provide escorts, or otherwise assist those experiencing harassment to feel safe for the duration of the event. If you cannot reach an event organizer or forum administrator and/or it is an emergency, please call 911 and/or remove yourself from the situation. You can also contact Code for America about harassment at safespace@codeforamerica.org and feel free to use the email template below. Code for America staff acknowledge that we are not always in a position to evaluate a given situation due to the number of events and the fact that our team is not always present. However, we are hopeful that by providing these guidelines we are establishing a community that jointly adheres to these values and can provide an environment that is welcoming to all. We value your attendance and hope that by communicating these expectations widely we can all enjoy a harassment-free environment. Email Template for Anti-Harassment Reporting SUBJECT: Safe Space alert at [EVENT NAME] I am writing because of harassment at a Code for America Communities event, (NAME, PLACE, DATE OF EVENT). You can reach me at (CONTACT INFO). Thank you.'
+      )
+    );
+  }
+
+  //,
+
+  //componentDidUpdate: function(){},
+  //
+  //componentWillUnmount: function(){}
+
+});
+
+module.exports = NAME;
+
+},{"react":431}],442:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -40715,7 +40764,7 @@ var NAME = React.createClass({
         null,
         React.createElement(
           Col,
-          { sm: 4, xs: 12, className: this.props.align == "right" ? "pull-right" : "pull-left" },
+          { sm: 5, xs: 12, className: this.props.align == "right" ? "pull-right" : "pull-left" },
           React.createElement(
             Row,
             null,
@@ -40739,7 +40788,7 @@ var NAME = React.createClass({
         ),
         React.createElement(
           Col,
-          { sm: 8, xs: 12, style: headerStyle, className: this.props.align == "right" ? "pull-left" : "pull-right" },
+          { sm: 7, xs: 12, style: headerStyle, className: this.props.align == "right" ? "pull-left" : "pull-right" },
           this.props.headerIcons
         )
       ),
@@ -40784,7 +40833,7 @@ var NAME = React.createClass({
 
 module.exports = NAME;
 
-},{"react":431,"react-bootstrap":250}],442:[function(require,module,exports){
+},{"react":431,"react-bootstrap":250}],443:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -40792,9 +40841,11 @@ var Col = require('react-bootstrap').Col;
 var Row = require('react-bootstrap').Row;
 var ContentCard = require('./ContentCard.react');
 var Meetup = require('./Meetup.react');
+var Partners = require('./Partners.react');
 var JoinUs = require('./JoinUs.react');
 var Featured = require('./Featured.react');
 var Photos = require('./Photos.react');
+var Conduct = require('./Conduct.react');
 
 var iconStyle = {
   maxHeight: "50px",
@@ -40828,18 +40879,19 @@ var NAME = React.createClass({
 
   render: function render() {
     var meetupData = React.createElement(Meetup, null);
-    var joinForm = React.createElement(JoinUs, null);
+    var partners = React.createElement(Partners, null);
     var photos = React.createElement(Photos, null);
+    var joinus = React.createElement(JoinUs, null);
     var featured = React.createElement(Featured, null);
     var connectIcons = React.createElement(
       Row,
       null,
-      React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Meetup.png' }),
-      React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Instagram.png' }),
       React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Github.png' }),
       React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Slack.png' }),
       React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Twitter.png' })
     );
+
+    var conduct = React.createElement(Conduct, null);
 
     return React.createElement(
       Row,
@@ -40851,7 +40903,7 @@ var NAME = React.createClass({
           headerText: 'CONNECT',
           subHeaderText: 'be part of our tribe.',
           align: 'left',
-          content: JoinUs,
+          content: joinus,
           headerIcons: connectIcons
         })
       ),
@@ -40875,7 +40927,7 @@ var NAME = React.createClass({
           subHeaderText: 'see the awesome.',
           align: 'left',
           content: photos,
-          footerText: '...Coming Soon',
+
           headerIcons: React.createElement(
             Row,
             null,
@@ -40891,14 +40943,28 @@ var NAME = React.createClass({
           subHeaderText: 'what\'s hot?',
           align: 'right',
           content: featured,
-          footerText: '...Coming Soon'
+          headerIcons: React.createElement(
+            Row,
+            null,
+            React.createElement('img', { className: 'pull-left', style: iconStyle, src: '/images/Github.png' })
+          )
         }),
+        React.createElement(
+          Col,
+          { md: 6, xs: 12 },
+          React.createElement(ContentCard, {
+            headerText: 'Code of Conduct',
+            subHeaderText: 'our guide',
+            align: 'right',
+            content: ''
+          })
+        ),
         React.createElement(ContentCard, {
           headerText: 'PARTNERS',
           subHeaderText: 'meet our friends',
           showBar: true,
           align: 'right',
-          content: ''
+          content: partners
         })
       ),
       React.createElement(
@@ -40924,13 +40990,47 @@ var NAME = React.createClass({
 
 module.exports = NAME;
 
-},{"./ContentCard.react":441,"./Featured.react":443,"./JoinUs.react":445,"./Meetup.react":446,"./Photos.react":447,"react":431,"react-bootstrap":250}],443:[function(require,module,exports){
-"use strict";
+},{"./Conduct.react":441,"./ContentCard.react":442,"./Featured.react":444,"./JoinUs.react":446,"./Meetup.react":447,"./Partners.react":448,"./Photos.react":449,"react":431,"react-bootstrap":250}],444:[function(require,module,exports){
+'use strict';
 
 var React = require('react');
+var Col = require('react-bootstrap').Col;
+var Row = require('react-bootstrap').Row;
 
-var NAME = React.createClass({
-  displayName: "NAME",
+var featuredImage = {
+  width: "100%",
+  height: "auto",
+  overflow: "hidden"
+
+};
+
+var secondImage = {
+  height: "50%",
+  width: "auto",
+  overflow: "hidden"
+
+};
+var thirdImage = {
+  height: "50%",
+  width: "auto",
+  overflow: "hidden",
+  marginTop: "5px"
+
+};
+
+var squareImage = {
+  width: "100%",
+  height: "auto"
+};
+
+var wrappers = {
+
+  margin: "0px",
+  padding: "5px"
+};
+
+var Featured = React.createClass({
+  displayName: 'Featured',
 
 
   //default API ----------------
@@ -40953,9 +41053,31 @@ var NAME = React.createClass({
 
   render: function render() {
     return React.createElement(
-      "div",
-      { className: "container-fluid" },
-      React.createElement("center", null)
+      Row,
+      { style: { padding: "15px" } },
+      React.createElement(
+        Col,
+        { xs: 8, style: wrappers },
+        React.createElement(
+          'div',
+          { style: featuredImage },
+          React.createElement('img', { src: '/images/mainImage.jpg', style: squareImage })
+        )
+      ),
+      React.createElement(
+        Col,
+        { xs: 4, style: wrappers },
+        React.createElement(
+          'div',
+          { style: secondImage },
+          React.createElement('img', { src: '/images/image2.jpg', style: squareImage })
+        ),
+        React.createElement(
+          'div',
+          { style: thirdImage },
+          React.createElement('img', { src: '/images/image3.jpg', style: squareImage })
+        )
+      )
     );
   }
 
@@ -40967,9 +41089,9 @@ var NAME = React.createClass({
 
 });
 
-module.exports = NAME;
+module.exports = Featured;
 
-},{"react":431}],444:[function(require,module,exports){
+},{"react":431,"react-bootstrap":250}],445:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -41068,7 +41190,7 @@ var Header = React.createClass({
 
 module.exports = Header;
 
-},{"react":431,"react-bootstrap":250}],445:[function(require,module,exports){
+},{"react":431,"react-bootstrap":250}],446:[function(require,module,exports){
 "use strict";
 
 var React = require('react');
@@ -41109,7 +41231,7 @@ var NAME = React.createClass({
 
 module.exports = NAME;
 
-},{"react":431}],446:[function(require,module,exports){
+},{"react":431}],447:[function(require,module,exports){
 "use strict";
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -41146,7 +41268,7 @@ var title = {
   color: "#3d5a6c",
   maxHeight: "123.5px",
   fontSize: "2em",
-  overflow: "hidden",
+  overflow: "ellipsis",
   fontFamily: "Futura",
   fontWeight: "bold",
   textAlign: "left"
@@ -41325,13 +41447,25 @@ var Meetup = React.createClass({
 
 module.exports = Meetup;
 
-},{"../actions/meetUp.actions.js":438,"../stores/meetUp.store.js":450,"react":431,"react-bootstrap":250}],447:[function(require,module,exports){
-"use strict";
+},{"../actions/meetUp.actions.js":438,"../stores/meetUp.store.js":452,"react":431,"react-bootstrap":250}],448:[function(require,module,exports){
+'use strict';
 
 var React = require('react');
+var Col = require('react-bootstrap').Col;
+var Row = require('react-bootstrap').Row;
 
-var NAME = React.createClass({
-  displayName: "NAME",
+var partner = {
+  color: "#3d5a6c",
+  maxHeight: "50px",
+  fontSize: "1.8em",
+  overflow: "ellipsis",
+  fontFamily: "Futura",
+  fontWeight: "lighter",
+  textAlign: "right"
+};
+
+var Partners = React.createClass({
+  displayName: 'Partners',
 
 
   //default API ----------------
@@ -41354,9 +41488,23 @@ var NAME = React.createClass({
 
   render: function render() {
     return React.createElement(
-      "div",
-      { className: "container-fluid" },
-      React.createElement("center", null)
+      Row,
+      { style: { padding: "15px" } },
+      React.createElement(
+        'h1',
+        { style: partner },
+        'Baltimore City Police'
+      ),
+      React.createElement(
+        'h1',
+        { style: partner },
+        'Councilman Zeke Cohen'
+      ),
+      React.createElement(
+        'h1',
+        { style: partner },
+        'Code For America'
+      )
     );
   }
 
@@ -41368,9 +41516,109 @@ var NAME = React.createClass({
 
 });
 
-module.exports = NAME;
+module.exports = Partners;
 
-},{"react":431}],448:[function(require,module,exports){
+},{"react":431,"react-bootstrap":250}],449:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Col = require('react-bootstrap').Col;
+var Row = require('react-bootstrap').Row;
+
+var featuredImage = {
+  width: "100%",
+  height: "auto",
+  overflow: "hidden"
+
+};
+
+var secondImage = {
+  height: "50%",
+  width: "auto",
+  overflow: "hidden"
+
+};
+var thirdImage = {
+  height: "50%",
+  width: "auto",
+  overflow: "hidden",
+  marginTop: "5px"
+
+};
+
+var squareImage = {
+  width: "100%",
+  height: "auto"
+};
+
+var wrappers = {
+  margin: "0px",
+  padding: "5px"
+};
+
+var Photos = React.createClass({
+  displayName: 'Photos',
+
+
+  //default API ----------------
+
+  //getDefaultProps: function(){
+  //    return null;
+  //},
+
+  //getInitialState: function() {},
+  //
+  //componentWillMount: function(){},
+  //
+  //componentDidMount: function(){},
+  //
+  //componentWillReceiveProps: function(){},
+
+  //shouldComponentUpdate: function(){},
+
+  //componentWillUpdate: function(){},
+
+  render: function render() {
+    return React.createElement(
+      Row,
+      { style: { padding: "15px" } },
+      React.createElement(
+        Col,
+        { xs: 4, style: wrappers },
+        React.createElement(
+          'div',
+          { style: secondImage },
+          React.createElement('img', { src: '/images/image2.jpg', style: squareImage })
+        ),
+        React.createElement(
+          'div',
+          { style: thirdImage },
+          React.createElement('img', { src: '/images/image3.jpg', style: squareImage })
+        )
+      ),
+      React.createElement(
+        Col,
+        { xs: 8, style: wrappers },
+        React.createElement(
+          'div',
+          { style: featuredImage },
+          React.createElement('img', { src: '/images/mainImage.jpg', style: squareImage })
+        )
+      )
+    );
+  }
+
+  //,
+
+  //componentDidUpdate: function(){},
+  //
+  //componentWillUnmount: function(){}
+
+});
+
+module.exports = Photos;
+
+},{"react":431,"react-bootstrap":250}],450:[function(require,module,exports){
 'use strict';
 
 var keyMirror = require('keymirror');
@@ -41383,7 +41631,7 @@ module.exports = {
 
 };
 
-},{"keymirror":161}],449:[function(require,module,exports){
+},{"keymirror":161}],451:[function(require,module,exports){
 'use strict';
 
 var Dispatcher = require('flux').Dispatcher;
@@ -41393,7 +41641,7 @@ var Dispatcher = require('flux').Dispatcher;
 
 module.exports = new Dispatcher();
 
-},{"flux":156,"object-assign":162}],450:[function(require,module,exports){
+},{"flux":156,"object-assign":162}],452:[function(require,module,exports){
 'use strict';
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
@@ -41462,7 +41710,7 @@ AppDispatcher.register(function (action) {
 
 module.exports = meetUpStore;
 
-},{"../constants/meetUp.constants.js":448,"../dispatcher/AppDispatcher":449,"events":132,"object-assign":162,"react":431}],451:[function(require,module,exports){
+},{"../constants/meetUp.constants.js":450,"../dispatcher/AppDispatcher":451,"events":132,"object-assign":162,"react":431}],453:[function(require,module,exports){
 'use strict';
 
 require('es6-promise').polyfill();

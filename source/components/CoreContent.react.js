@@ -3,9 +3,11 @@ var Col = require('react-bootstrap').Col;
 var Row = require('react-bootstrap').Row;
 var ContentCard = require('./ContentCard.react');
 var Meetup = require('./Meetup.react');
+var Partners = require('./Partners.react');
 var JoinUs = require('./JoinUs.react');
 var Featured = require('./Featured.react');
 var Photos = require('./Photos.react');
+var Conduct = require('./Conduct.react')
 
 
 const iconStyle = {
@@ -38,8 +40,9 @@ var NAME = React.createClass({
 
   render: function() {
     var meetupData = <Meetup />
-    var joinForm = <JoinUs />
+    var partners = <Partners />
     var photos = <Photos />
+    var joinus = <JoinUs />
     var featured = <Featured />
     var connectIcons = (
       <Row>
@@ -50,6 +53,8 @@ var NAME = React.createClass({
       </Row>
 
     )
+
+    var conduct = <Conduct />
 
 
 
@@ -65,7 +70,7 @@ var NAME = React.createClass({
             headerText="CONNECT"
             subHeaderText="be part of our tribe."
             align="left"
-            content={JoinUs}
+            content={joinus}
             headerIcons={connectIcons}
           />
       </Col>
@@ -86,7 +91,7 @@ var NAME = React.createClass({
           subHeaderText="see the awesome."
           align="left"
           content={photos}
-          footerText="...Coming Soon"
+
           headerIcons={<Row><img className="pull-right" style={iconStyle} src="/images/Instagram.png"/></Row>}
         />
 
@@ -100,15 +105,26 @@ var NAME = React.createClass({
           subHeaderText="what's hot?"
           align="right"
           content={featured}
-          footerText="...Coming Soon"
+          headerIcons={<Row><img className="pull-left" style={iconStyle} src="/images/Github.png"/></Row>}
         />
+
+        <Col md={6} xs={12}>
+
+            <ContentCard
+              headerText="Code of Conduct"
+              subHeaderText="our guide"
+              align="right"
+              content=""
+            />
+
+        </Col>
 
         <ContentCard
           headerText="PARTNERS"
           subHeaderText="meet our friends"
           showBar={true}
           align="right"
-          content=""
+          content={partners}
         />
 
         </Col>

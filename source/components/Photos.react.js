@@ -1,7 +1,39 @@
 var React = require('react');
+var Col = require('react-bootstrap').Col;
+var Row = require('react-bootstrap').Row;
 
+const featuredImage ={
+  width:"100%",
+  height:"auto",
+  overflow:"hidden"
 
-var NAME = React.createClass({
+}
+
+const secondImage ={
+  height:"50%",
+  width:"auto",
+  overflow:"hidden"
+
+}
+const thirdImage ={
+  height:"50%",
+  width:"auto",
+  overflow:"hidden",
+  marginTop:"5px"
+
+}
+
+const squareImage={
+  width:"100%",
+  height:"auto",
+}
+
+const wrappers ={
+  margin:"0px",
+  padding:"5px"
+}
+
+var Photos = React.createClass({
 
   //default API ----------------
 
@@ -23,11 +55,26 @@ var NAME = React.createClass({
 
   render: function() {
     return (
-      <div className="container-fluid">
-        <center>
-        
-        </center>
-      </div>
+      <Row style={{padding:"15px"}}>
+
+        <Col xs={4} style={wrappers}>
+          <div style={secondImage}>
+            <img src="/images/image2.jpg" style={squareImage}/>
+          </div>
+          <div style={thirdImage}>
+            <img src="/images/image3.jpg" style={squareImage}/>
+          </div>
+
+        </Col>
+
+        <Col xs={8} style={wrappers}>
+          <div style={featuredImage}>
+            <img src="/images/mainImage.jpg" style={squareImage}/>
+          </div>
+
+        </Col>
+
+      </Row>
     );
 
   }
@@ -40,4 +87,4 @@ var NAME = React.createClass({
 
 });
 
-module.exports = NAME;
+module.exports = Photos;

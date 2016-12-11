@@ -31,7 +31,7 @@ const title ={
   color: "#3d5a6c",
   maxHeight: "123.5px",
   fontSize: "2em",
-  overflow: "hidden",
+  overflow: "ellipsis",
   fontFamily:"Futura",
   fontWeight:"bold",
   textAlign:"left"

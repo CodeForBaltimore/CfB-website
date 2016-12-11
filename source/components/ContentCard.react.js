@@ -70,7 +70,7 @@ var NAME = React.createClass({
 
         <div style={cardStyle}>
         <Row>
-          <Col sm={4} xs={12} className={this.props.align =="right" ? "pull-right" :"pull-left" }>
+          <Col sm={5} xs={12} className={this.props.align =="right" ? "pull-right" :"pull-left" }>
             <Row><Col xs={12} style={headerStyle}>{this.props.headerText}</Col> </Row>
             <Row><Col xs={12} style={subHeaderStyle}>{this.props.subHeaderText}</Col> </Row>
           </Col>
