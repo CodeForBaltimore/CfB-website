@@ -1,7 +1,42 @@
 var React = require('react');
+var Col = require('react-bootstrap').Col;
+var Row = require('react-bootstrap').Row;
+
+const wrapper={
+  maxHeight:"400px",
+  overflow: "hidden"
+}
+
+const title ={
+  color: "#3d5a6c",
+  maxHeight: "50px",
+  fontSize: "1.2em",
+  fontFamily:"Futura",
+  fontWeight:"bold",
+  textAlign:"left"
+}
+
+const description ={
+  textAlign:"left",
+  color: "#fdf9f6",
+  fontSize: "0.9em",
+  fontFamily:"sans-serif",
+  fontWeight:"lighter",
+  overflow: "ellipsis"
+}
+
+const linkOut ={
+  textAlign:"right",
+  color: "#fdf9f6",
+  fontSize: "1.2em",
+  fontFamily:"Futura",
+  fontWeight:"normal",
+}
 
 
-var NAME = React.createClass({
+
+
+var Conduct = React.createClass({
 
   //default API ----------------
 
@@ -23,32 +58,38 @@ var NAME = React.createClass({
 
   render: function() {
     return (
-      <Row>
+      <Row style={{padding:"15px"}}>
+
+      <Col xs={12} style={wrapper}>
 
 
 
-      <p>
-
-       Code for America's Code of Conduct
-
+       <Row style={title}>Code for America Code of Conduct</Row>
+       <Row style={description}>
           The Code for America community expects that Code for America network activities, events, and digital forums:
 
-          Are a safe and respectful environment for all participants.
-          Are a place where people are free to fully express their identities.
-          Presume the value of others. Everyone’s ideas, skills, and contributions have value.
-          Don’t assume everyone has the same context, and encourage questions.
-          Find a way for people to be productive with their skills (technical and not) and energy. Use language such as “yes/and”, not “no/but.”
-          Encourage members and participants to listen as much as they speak.
-          Strive to build tools that are open and free technology for public use. Activities that aim to foster public use, not private gain, are prioritized.
-          Prioritize access for and input from those who are traditionally excluded from the civic process.
-          Work to ensure that the community is well-represented in the planning, design, and implementation of civic tech. This includes encouraging participation from women, minorities, and traditionally marginalized groups.
-          Actively involve community groups and those with subject matter expertise in the decision-making process.
-          Ensure that the relationships and conversations between community members, the local government staff and community partners remain respectful, participatory, and productive.
-          Provide an environment where people are free from discrimination or harassment.
-          Code for America reserves the right to ask anyone in violation of these policies not to participate in Code for America network activities, events, and digital forums.
+          <ol>
 
-          Code for America's Anti-Harassment Policy
+            <li>Are a safe and respectful environment for all participants.</li>
+            <li>Are a place where people are free to fully express their identities.</li>
+            <li>Presume the value of others. Everyone’s ideas, skills, and contributions have value.</li>
+            <li>Don’t assume everyone has the same context, and encourage questions.</li>
+            <li>Find a way for people to be productive with their skills (technical and not) and energy. Use language such as “yes/and”, not “no/but.”</li>
+            <li>Encourage members and participants to listen as much as they speak.</li>
+            <li>Strive to build tools that are open and free technology for public use. Activities that aim to foster public use, not private gain, are prioritized.</li>
+            <li>Prioritize access for and input from those who are traditionally excluded from the civic process.</li>
+            <li>Work to ensure that the community is well-represented in the planning, design, and implementation of civic tech. This includes encouraging participation from women, minorities, and traditionally marginalized groups.</li>
+            <li>Actively involve community groups and those with subject matter expertise in the decision-making process.</li>
+            <li>Ensure that the relationships and conversations between community members, the local government staff and community partners remain respectful, participatory, and productive.</li>
+            <li>Provide an environment where people are free from discrimination or harassment.</li>
+            <li>Code for America reserves the right to ask anyone in violation of these policies not to participate in Code for America network activities, events, and digital forums.</li>
 
+          </ol>
+
+      </Row>
+
+       <Row style={title}>Code for America Anti-Harassment Policy</Row>
+       <Row style={description}>
           This anti-harassment policy is based on the example policy from the Geek Feminism wiki, created by the Ada Initiative and other volunteers.
 
           This policy is based on several other policies, including the Ohio LinuxFest anti-harassment policy, written by Esther Filderman and Beth Lynn Eicher, and the Con Anti-Harassment Project. Mary Gardiner, Valerie Aurora, Sarah Smith, and Donna Benjamin generalized the policies and added supporting material. Many members of LinuxChix, Geek Feminism and other groups contributed to this work.
@@ -79,8 +120,19 @@ var NAME = React.createClass({
 
           You can reach me at (CONTACT INFO). Thank you.
 
-      </p>
+        </Row>
 
+
+      </Col>
+
+      <Col xs={12} >
+        <Row style={linkOut}>
+          <a  style={{color:"#fdf9f6"}} href="https://github.com/codeforamerica/codeofconduct" >
+            READ FULL TEXT ON GITUB
+            <img src="/images/Arrow_Blue.png" style={{height:"25px"}}/>
+          </a>
+        </Row>
+      </Col>
       </Row>
     );
 
@@ -94,4 +146,4 @@ var NAME = React.createClass({
 
 });
 
-module.exports = NAME;
+module.exports = Conduct;

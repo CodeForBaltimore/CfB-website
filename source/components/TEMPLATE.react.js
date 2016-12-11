@@ -1,5 +1,6 @@
 var React = require('react');
-
+var Col = require('react-bootstrap').Col;
+var Row = require('react-bootstrap').Row;
 
 var NAME = React.createClass({
 

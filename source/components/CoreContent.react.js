@@ -95,6 +95,13 @@ var NAME = React.createClass({
           headerIcons={<Row><img className="pull-right" style={iconStyle} src="/images/Instagram.png"/></Row>}
         />
 
+        <ContentCard
+          headerText="Code of Conduct"
+          subHeaderText="our guide"
+          align="left"
+          content={conduct}
+        />
+
 
       </Col>
 
@@ -108,17 +115,6 @@ var NAME = React.createClass({
           headerIcons={<Row><img className="pull-left" style={iconStyle} src="/images/Github.png"/></Row>}
         />
 
-        <Col md={6} xs={12}>
-
-            <ContentCard
-              headerText="Code of Conduct"
-              subHeaderText="our guide"
-              align="right"
-              content=""
-            />
-
-        </Col>
-
         <ContentCard
           headerText="PARTNERS"
           subHeaderText="meet our friends"
@@ -126,19 +122,8 @@ var NAME = React.createClass({
           align="right"
           content={partners}
         />
+      </Col>
 
-        </Col>
-
-        <Col md={6} xs={12}>
-
-            <ContentCard
-              headerText="Code of Conduct"
-              subHeaderText="our guide"
-              align="right"
-              content=""
-            />
-
-        </Col>
 
       </Row>
     );

@@ -40641,9 +40641,42 @@ module.exports = Application;
 'use strict';
 
 var React = require('react');
+var Col = require('react-bootstrap').Col;
+var Row = require('react-bootstrap').Row;
 
-var NAME = React.createClass({
-  displayName: 'NAME',
+var wrapper = {
+  maxHeight: "400px",
+  overflow: "hidden"
+};
+
+var title = {
+  color: "#3d5a6c",
+  maxHeight: "50px",
+  fontSize: "1.2em",
+  fontFamily: "Futura",
+  fontWeight: "bold",
+  textAlign: "left"
+};
+
+var description = {
+  textAlign: "left",
+  color: "#fdf9f6",
+  fontSize: "0.9em",
+  fontFamily: "sans-serif",
+  fontWeight: "lighter",
+  overflow: "ellipsis"
+};
+
+var linkOut = {
+  textAlign: "right",
+  color: "#fdf9f6",
+  fontSize: "1.2em",
+  fontFamily: "Futura",
+  fontWeight: "normal"
+};
+
+var Conduct = React.createClass({
+  displayName: 'Conduct',
 
 
   //default API ----------------
@@ -40667,11 +40700,113 @@ var NAME = React.createClass({
   render: function render() {
     return React.createElement(
       Row,
-      null,
+      { style: { padding: "15px" } },
       React.createElement(
-        'p',
-        null,
-        'Code for America\'s Code of Conduct The Code for America community expects that Code for America network activities, events, and digital forums: Are a safe and respectful environment for all participants. Are a place where people are free to fully express their identities. Presume the value of others. Everyone\u2019s ideas, skills, and contributions have value. Don\u2019t assume everyone has the same context, and encourage questions. Find a way for people to be productive with their skills (technical and not) and energy. Use language such as \u201Cyes/and\u201D, not \u201Cno/but.\u201D Encourage members and participants to listen as much as they speak. Strive to build tools that are open and free technology for public use. Activities that aim to foster public use, not private gain, are prioritized. Prioritize access for and input from those who are traditionally excluded from the civic process. Work to ensure that the community is well-represented in the planning, design, and implementation of civic tech. This includes encouraging participation from women, minorities, and traditionally marginalized groups. Actively involve community groups and those with subject matter expertise in the decision-making process. Ensure that the relationships and conversations between community members, the local government staff and community partners remain respectful, participatory, and productive. Provide an environment where people are free from discrimination or harassment. Code for America reserves the right to ask anyone in violation of these policies not to participate in Code for America network activities, events, and digital forums. Code for America\'s Anti-Harassment Policy This anti-harassment policy is based on the example policy from the Geek Feminism wiki, created by the Ada Initiative and other volunteers. This policy is based on several other policies, including the Ohio LinuxFest anti-harassment policy, written by Esther Filderman and Beth Lynn Eicher, and the Con Anti-Harassment Project. Mary Gardiner, Valerie Aurora, Sarah Smith, and Donna Benjamin generalized the policies and added supporting material. Many members of LinuxChix, Geek Feminism and other groups contributed to this work. All Code for America network activities, events, and digital forums and their staff, presenters, and participants are held to an anti-harassment policy, included below. In addition to governing our own events by this policy, Code for America will only lend our brand and fund groups that offer an anti-harassment policy to their attendees. For information on how to offer an anti-harassment policy to your group, see this guide. Code for America is dedicated to providing a harassment-free experience for everyone regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age, or religion. We do not tolerate harassment of staff, presenters, and participants in any form. Sexual language and imagery is not appropriate for any Code for America event or network activity, including talks. Anyone in violation of these policies may expelled from Code for America network activities, events, and digital forums, at the discretion of the event organizer or forum administrator. Harassment includes but is not limited to: offensive verbal or written comments related to gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, religion; sexual images in public spaces; deliberate intimidation; stalking; following; harassing photography or recording; sustained disruption of talks or other events; inappropriate physical contact; unwelcome sexual attention; unwarranted exclusion; and patronizing language or action. If a participant engages in harassing behavior, the organizers may take any action they deem appropriate, including warning the offender or expulsion from Code for America network activities, events, and digital forums. If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact a member of the event staff or forum administrator immediately. You can contact them at [EVENT ORGANIZER/FORUM ADMINISTRATOR EMAIL AND PHONE NUMBER]. Event staff or forum administrators will be happy to help participants contact hotel/venue security or local law enforcement, provide escorts, or otherwise assist those experiencing harassment to feel safe for the duration of the event. If you cannot reach an event organizer or forum administrator and/or it is an emergency, please call 911 and/or remove yourself from the situation. You can also contact Code for America about harassment at safespace@codeforamerica.org and feel free to use the email template below. Code for America staff acknowledge that we are not always in a position to evaluate a given situation due to the number of events and the fact that our team is not always present. However, we are hopeful that by providing these guidelines we are establishing a community that jointly adheres to these values and can provide an environment that is welcoming to all. We value your attendance and hope that by communicating these expectations widely we can all enjoy a harassment-free environment. Email Template for Anti-Harassment Reporting SUBJECT: Safe Space alert at [EVENT NAME] I am writing because of harassment at a Code for America Communities event, (NAME, PLACE, DATE OF EVENT). You can reach me at (CONTACT INFO). Thank you.'
+        Col,
+        { xs: 12, style: wrapper },
+        React.createElement(
+          Row,
+          { style: title },
+          'Code for America Code of Conduct'
+        ),
+        React.createElement(
+          Row,
+          { style: description },
+          'The Code for America community expects that Code for America network activities, events, and digital forums:',
+          React.createElement(
+            'ol',
+            null,
+            React.createElement(
+              'li',
+              null,
+              'Are a safe and respectful environment for all participants.'
+            ),
+            React.createElement(
+              'li',
+              null,
+              'Are a place where people are free to fully express their identities.'
+            ),
+            React.createElement(
+              'li',
+              null,
+              'Presume the value of others. Everyone\u2019s ideas, skills, and contributions have value.'
+            ),
+            React.createElement(
+              'li',
+              null,
+              'Don\u2019t assume everyone has the same context, and encourage questions.'
+            ),
+            React.createElement(
+              'li',
+              null,
+              'Find a way for people to be productive with their skills (technical and not) and energy. Use language such as \u201Cyes/and\u201D, not \u201Cno/but.\u201D'
+            ),
+            React.createElement(
+              'li',
+              null,
+              'Encourage members and participants to listen as much as they speak.'
+            ),
+            React.createElement(
+              'li',
+              null,
+              'Strive to build tools that are open and free technology for public use. Activities that aim to foster public use, not private gain, are prioritized.'
+            ),
+            React.createElement(
+              'li',
+              null,
+              'Prioritize access for and input from those who are traditionally excluded from the civic process.'
+            ),
+            React.createElement(
+              'li',
+              null,
+              'Work to ensure that the community is well-represented in the planning, design, and implementation of civic tech. This includes encouraging participation from women, minorities, and traditionally marginalized groups.'
+            ),
+            React.createElement(
+              'li',
+              null,
+              'Actively involve community groups and those with subject matter expertise in the decision-making process.'
+            ),
+            React.createElement(
+              'li',
+              null,
+              'Ensure that the relationships and conversations between community members, the local government staff and community partners remain respectful, participatory, and productive.'
+            ),
+            React.createElement(
+              'li',
+              null,
+              'Provide an environment where people are free from discrimination or harassment.'
+            ),
+            React.createElement(
+              'li',
+              null,
+              'Code for America reserves the right to ask anyone in violation of these policies not to participate in Code for America network activities, events, and digital forums.'
+            )
+          )
+        ),
+        React.createElement(
+          Row,
+          { style: title },
+          'Code for America Anti-Harassment Policy'
+        ),
+        React.createElement(
+          Row,
+          { style: description },
+          'This anti-harassment policy is based on the example policy from the Geek Feminism wiki, created by the Ada Initiative and other volunteers. This policy is based on several other policies, including the Ohio LinuxFest anti-harassment policy, written by Esther Filderman and Beth Lynn Eicher, and the Con Anti-Harassment Project. Mary Gardiner, Valerie Aurora, Sarah Smith, and Donna Benjamin generalized the policies and added supporting material. Many members of LinuxChix, Geek Feminism and other groups contributed to this work. All Code for America network activities, events, and digital forums and their staff, presenters, and participants are held to an anti-harassment policy, included below. In addition to governing our own events by this policy, Code for America will only lend our brand and fund groups that offer an anti-harassment policy to their attendees. For information on how to offer an anti-harassment policy to your group, see this guide. Code for America is dedicated to providing a harassment-free experience for everyone regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age, or religion. We do not tolerate harassment of staff, presenters, and participants in any form. Sexual language and imagery is not appropriate for any Code for America event or network activity, including talks. Anyone in violation of these policies may expelled from Code for America network activities, events, and digital forums, at the discretion of the event organizer or forum administrator. Harassment includes but is not limited to: offensive verbal or written comments related to gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, religion; sexual images in public spaces; deliberate intimidation; stalking; following; harassing photography or recording; sustained disruption of talks or other events; inappropriate physical contact; unwelcome sexual attention; unwarranted exclusion; and patronizing language or action. If a participant engages in harassing behavior, the organizers may take any action they deem appropriate, including warning the offender or expulsion from Code for America network activities, events, and digital forums. If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact a member of the event staff or forum administrator immediately. You can contact them at [EVENT ORGANIZER/FORUM ADMINISTRATOR EMAIL AND PHONE NUMBER]. Event staff or forum administrators will be happy to help participants contact hotel/venue security or local law enforcement, provide escorts, or otherwise assist those experiencing harassment to feel safe for the duration of the event. If you cannot reach an event organizer or forum administrator and/or it is an emergency, please call 911 and/or remove yourself from the situation. You can also contact Code for America about harassment at safespace@codeforamerica.org and feel free to use the email template below. Code for America staff acknowledge that we are not always in a position to evaluate a given situation due to the number of events and the fact that our team is not always present. However, we are hopeful that by providing these guidelines we are establishing a community that jointly adheres to these values and can provide an environment that is welcoming to all. We value your attendance and hope that by communicating these expectations widely we can all enjoy a harassment-free environment. Email Template for Anti-Harassment Reporting SUBJECT: Safe Space alert at [EVENT NAME] I am writing because of harassment at a Code for America Communities event, (NAME, PLACE, DATE OF EVENT). You can reach me at (CONTACT INFO). Thank you.'
+        )
+      ),
+      React.createElement(
+        Col,
+        { xs: 12 },
+        React.createElement(
+          Row,
+          { style: linkOut },
+          React.createElement(
+            'a',
+            { style: { color: "#fdf9f6" }, href: 'https://github.com/codeforamerica/codeofconduct' },
+            'READ FULL TEXT ON GITUB',
+            React.createElement('img', { src: '/images/Arrow_Blue.png', style: { height: "25px" } })
+          )
+        )
       )
     );
   }
@@ -40684,9 +40819,9 @@ var NAME = React.createClass({
 
 });
 
-module.exports = NAME;
+module.exports = Conduct;
 
-},{"react":431}],442:[function(require,module,exports){
+},{"react":431,"react-bootstrap":250}],442:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -40933,6 +41068,12 @@ var NAME = React.createClass({
             null,
             React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Instagram.png' })
           )
+        }),
+        React.createElement(ContentCard, {
+          headerText: 'Code of Conduct',
+          subHeaderText: 'our guide',
+          align: 'left',
+          content: conduct
         })
       ),
       React.createElement(
@@ -40949,32 +41090,12 @@ var NAME = React.createClass({
             React.createElement('img', { className: 'pull-left', style: iconStyle, src: '/images/Github.png' })
           )
         }),
-        React.createElement(
-          Col,
-          { md: 6, xs: 12 },
-          React.createElement(ContentCard, {
-            headerText: 'Code of Conduct',
-            subHeaderText: 'our guide',
-            align: 'right',
-            content: ''
-          })
-        ),
         React.createElement(ContentCard, {
           headerText: 'PARTNERS',
           subHeaderText: 'meet our friends',
           showBar: true,
           align: 'right',
           content: partners
-        })
-      ),
-      React.createElement(
-        Col,
-        { md: 6, xs: 12 },
-        React.createElement(ContentCard, {
-          headerText: 'Code of Conduct',
-          subHeaderText: 'our guide',
-          align: 'right',
-          content: ''
         })
       )
     );
