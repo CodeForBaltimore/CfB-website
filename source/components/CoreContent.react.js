@@ -8,7 +8,14 @@ var Featured = require('./Featured.react');
 var Photos = require('./Photos.react');
 
 
-
+const iconStyle = {
+  maxHeight:"50px",
+  minHeight:"20px",
+  height:"auto",
+  margin:"10px",
+  marginLeft:"7%",
+  marginRight:"5%"
+}
 var NAME = React.createClass({
 
   //default API ----------------
@@ -34,9 +41,36 @@ var NAME = React.createClass({
     var joinForm = <JoinUs />
     var photos = <Photos />
     var featured = <Featured />
+    var connectIcons = (
+      <Row>
+        <img className="pull-right" style={iconStyle} src="/images/Meetup.png"/>
+        <img className="pull-right" style={iconStyle} src="/images/Instagram.png"/>
+        <img className="pull-right" style={iconStyle} src="/images/Github.png"/>
+        <img className="pull-right" style={iconStyle} src="/images/Slack.png"/>
+        <img className="pull-right" style={iconStyle} src="/images/Twitter.png"/>
+
+      </Row>
+
+    )
+
+
+
+
+
+
 
     return (
       <Row style={{marginTop:"30px"}}>
+
+      <Col xs={12}>
+          <ContentCard
+            headerText="CONNECT"
+            subHeaderText="be part of our tribe."
+            align="left"
+            content={JoinUs}
+            headerIcons={connectIcons}
+          />
+      </Col>
 
       <Col md={6} xs={12}>
 
@@ -46,6 +80,7 @@ var NAME = React.createClass({
           showBar={true}
           align="left"
           content={meetupData}
+          headerIcons={<Row><img className="pull-right" style={iconStyle} src="/images/Meetup.png"/></Row>}
         />
 
         <ContentCard
@@ -54,6 +89,7 @@ var NAME = React.createClass({
           align="left"
           content={photos}
           footerText="...Coming Soon"
+          headerIcons={<Row><img className="pull-right" style={iconStyle} src="/images/Instagram.png"/></Row>}
         />
 
 

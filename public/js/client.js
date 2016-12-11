@@ -40669,7 +40669,7 @@ var footerStyle = {
 var cardStyle = {
   backgroundColor: "#f4921f",
   padding: "1em",
-  minHeight: "200px",
+  minHeight: "100px",
   height: "auto",
   marginBottom: "30px"
 };
@@ -40715,20 +40715,33 @@ var NAME = React.createClass({
         null,
         React.createElement(
           Col,
-          { xs: 12, style: headerStyle },
-          this.props.headerText
+          { sm: 4, xs: 12, className: this.props.align == "right" ? "pull-right" : "pull-left" },
+          React.createElement(
+            Row,
+            null,
+            React.createElement(
+              Col,
+              { xs: 12, style: headerStyle },
+              this.props.headerText
+            ),
+            ' '
+          ),
+          React.createElement(
+            Row,
+            null,
+            React.createElement(
+              Col,
+              { xs: 12, style: subHeaderStyle },
+              this.props.subHeaderText
+            ),
+            ' '
+          )
         ),
-        ' '
-      ),
-      React.createElement(
-        Row,
-        null,
         React.createElement(
           Col,
-          { xs: 12, style: subHeaderStyle },
-          this.props.subHeaderText
-        ),
-        ' '
+          { sm: 8, xs: 12, style: headerStyle, className: this.props.align == "right" ? "pull-left" : "pull-right" },
+          this.props.headerIcons
+        )
       ),
       this.props.showBar ? React.createElement(
         Row,
@@ -40783,6 +40796,14 @@ var JoinUs = require('./JoinUs.react');
 var Featured = require('./Featured.react');
 var Photos = require('./Photos.react');
 
+var iconStyle = {
+  maxHeight: "50px",
+  minHeight: "20px",
+  height: "auto",
+  margin: "10px",
+  marginLeft: "7%",
+  marginRight: "5%"
+};
 var NAME = React.createClass({
   displayName: 'NAME',
 
@@ -40810,10 +40831,30 @@ var NAME = React.createClass({
     var joinForm = React.createElement(JoinUs, null);
     var photos = React.createElement(Photos, null);
     var featured = React.createElement(Featured, null);
+    var connectIcons = React.createElement(
+      Row,
+      null,
+      React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Meetup.png' }),
+      React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Instagram.png' }),
+      React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Github.png' }),
+      React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Slack.png' }),
+      React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Twitter.png' })
+    );
 
     return React.createElement(
       Row,
       { style: { marginTop: "30px" } },
+      React.createElement(
+        Col,
+        { xs: 12 },
+        React.createElement(ContentCard, {
+          headerText: 'CONNECT',
+          subHeaderText: 'be part of our tribe.',
+          align: 'left',
+          content: JoinUs,
+          headerIcons: connectIcons
+        })
+      ),
       React.createElement(
         Col,
         { md: 6, xs: 12 },
@@ -40822,14 +40863,24 @@ var NAME = React.createClass({
           subHeaderText: 'what\'s up next?',
           showBar: true,
           align: 'left',
-          content: meetupData
+          content: meetupData,
+          headerIcons: React.createElement(
+            Row,
+            null,
+            React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Meetup.png' })
+          )
         }),
         React.createElement(ContentCard, {
           headerText: 'PHOTOS',
           subHeaderText: 'see the awesome.',
           align: 'left',
           content: photos,
-          footerText: '...Coming Soon'
+          footerText: '...Coming Soon',
+          headerIcons: React.createElement(
+            Row,
+            null,
+            React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Instagram.png' })
+          )
         })
       ),
       React.createElement(
