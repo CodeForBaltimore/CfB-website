@@ -5,9 +5,9 @@ var Col = require('react-bootstrap').Col;
 var Row = require('react-bootstrap').Row;
 
 const date = { color: "#3d5a6c" }
-const meetupCalendar = { flex:1, maxWidth: "220px" }
+const meetupCalendar = { flex:1, maxWidth: "150px" }
 const meetupCalContainer = {
-  width: "200px",
+  width: "100%",
   textAlign: "center",
   float: "left",
   backgroundColor:"#fdf9f6",
