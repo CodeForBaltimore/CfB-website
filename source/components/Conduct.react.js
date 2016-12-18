@@ -10,7 +10,7 @@ const wrapper={
 const title ={
   color: "#3d5a6c",
   maxHeight: "50px",
-  fontSize: "3em",
+  fontSize: "2.5em",
   fontFamily:"Futura",
   fontWeight:"bold",
   textAlign:"left"
@@ -28,7 +28,7 @@ const description ={
 const linkOut ={
   textAlign:"right",
   color: "#fdf9f6",
-  fontSize: "2.5em",
+  fontSize: "2em",
   fontFamily:"Futura",
   fontWeight:"normal",
 }

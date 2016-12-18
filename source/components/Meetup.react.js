@@ -31,7 +31,7 @@ const description = {
 const title ={
   color: "#3d5a6c",
   maxHeight: "123.5px",
-  fontSize: "3em",
+  fontSize: "2.5em",
   overflow: "ellipsis",
   fontFamily:"Futura",
   fontWeight:"bold",

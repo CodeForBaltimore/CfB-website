@@ -41,7 +41,7 @@ const barStyle={
 
 
 
-var NAME = React.createClass({
+var Card = React.createClass({
 
   //default API ----------------
 
@@ -111,4 +111,4 @@ var NAME = React.createClass({
 
 });
 
-module.exports = NAME;
+module.exports = Card;
