@@ -46,9 +46,9 @@ var Join = React.createClass({
 
         </Col>
 
-        <Col style={altJoinStyle}mdHidden={true}  lgHidden={true} xs={12}>
+        <Col style={altJoinStyle} mdHidden={true}  lgHidden={true} xs={12}>
 
-                We are civic hackers interested in contributing to open data and open source in Baltimore.<br />
+                ALT: We are civic hackers interested in contributing to open data and open source in Baltimore.<br />
                 All skills levels and skill types are welcome; coders need designers, project managers, champions, and data ninjas.
         </Col>
       </div>
