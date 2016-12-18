@@ -4,7 +4,7 @@ var express = require('express');
 var fs = require('fs');
 var React = require('react');
 var ReactDOMServer = require('react-dom/server');
-var App = require('./source/Components/Application.react.js');
+var App = require('./source/components/Application.react.js');
 var config = require("./private/config.js")
 var request = require('request');
 
