@@ -62,7 +62,7 @@ var Conduct = React.createClass({
         <Col xs={12} >
           <Row style={linkOut}>
             <a  style={{color:"#3d5a6c"}} href="https://github.com/CodeForBaltimore/CodeOfConduct" >
-              READ ON GITUB
+              Read on Github
               <img src="/images/Arrow_Blue.png" style={{height:"25px"}}/>
             </a>
           </Row>
