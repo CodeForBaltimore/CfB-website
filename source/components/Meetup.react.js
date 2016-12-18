@@ -20,9 +20,10 @@ const meetupWeekday = { fontSize: "14px", marginTop: "-5px" }
 const description = {
   textAlign:"left",
   color: "#6d6865",
-  maxHeight: "100px",
-  fontSize: "5em",
-  overflow: "ellipsis",
+  maxHeight: "300px",
+  fontSize: "2em",
+  overflow: "hidden",
+  textOverflow:"ellipsis",
   fontFamily:"sans-serif",
   fontWeight:"lighter",
   maxHeight:"100px"
