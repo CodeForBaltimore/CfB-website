@@ -44,13 +44,13 @@ const rsvpA = {
   maxHeight:"30px",
   textAlign:"left",
   fontFamily:"sans-serif",
-  fontWeight:"normal"
+  fontWeight:"normal",
   fontSize: "2em",
 }
 const rsvpCount = {
   color: "#3d5a6c",
   fontFamily:"sans-serif",
-  textAlign:"left"
+  textAlign:"left",
   fontSize: "2em",
 }
 const showMe = {border:"1px solid blue"}
