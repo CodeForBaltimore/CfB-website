@@ -5,7 +5,7 @@ var Row = require('react-bootstrap').Row;
 const partner ={
   color: "#3d5a6c",
   maxHeight: "50px",
-  fontSize: "1.8em",
+  fontSize: "2.5em",
   overflow: "ellipsis",
   fontFamily:"Futura",
   fontWeight:"lighter",

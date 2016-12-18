@@ -21,7 +21,7 @@ const description = {
   textAlign:"left",
   color: "#6d6865",
   maxHeight: "100px",
-  fontSize: "1.3em",
+  fontSize: "5em",
   overflow: "ellipsis",
   fontFamily:"sans-serif",
   fontWeight:"lighter",
@@ -30,7 +30,7 @@ const description = {
 const title ={
   color: "#3d5a6c",
   maxHeight: "123.5px",
-  fontSize: "2em",
+  fontSize: "3em",
   overflow: "ellipsis",
   fontFamily:"Futura",
   fontWeight:"bold",
@@ -45,11 +45,13 @@ const rsvpA = {
   textAlign:"left",
   fontFamily:"sans-serif",
   fontWeight:"normal"
+  fontSize: "2em",
 }
 const rsvpCount = {
   color: "#3d5a6c",
   fontFamily:"sans-serif",
   textAlign:"left"
+  fontSize: "2em",
 }
 const showMe = {border:"1px solid blue"}
 

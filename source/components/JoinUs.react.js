@@ -12,7 +12,7 @@ const joinStyle ={
 
 const altJoinStyle ={
   color:"#6d6865",
-  fontSize:"2.5em",
+  fontSize:"3em",
   fontWeight:"lighter",
   fontFamily:"Futura"
 }
@@ -51,7 +51,7 @@ var Join = React.createClass({
 
         <Col style={altJoinStyle} mdHidden={true}  lgHidden={true} xs={12}>
 
-                ALT: We are civic hackers interested in contributing to open data and open source in Baltimore.<br />
+                We are civic hackers interested in contributing to open data and open source in Baltimore.<br />
                 All skills levels and skill types are welcome; coders need designers, project managers, champions, and data ninjas.
         </Col>
       </div>
