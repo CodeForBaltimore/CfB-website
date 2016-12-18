@@ -40889,8 +40889,8 @@ var Photos = require('./Photos.react');
 var Conduct = require('./Conduct.react');
 
 var iconStyle = {
-  maxHeight: "50px",
-  minHeight: "20px",
+  maxHeight: "80px",
+  minHeight: "50px",
   height: "auto",
   marginBottom: "10px",
   marginLeft: "5%",
@@ -41299,7 +41299,7 @@ var React = require('react');
 
 var joinStyle = {
   color: "#6d6865",
-  fontSize: "20px",
+  fontSize: "1.5em",
   fontWeight: "lighter",
   fontFamily: "Futura"
 };

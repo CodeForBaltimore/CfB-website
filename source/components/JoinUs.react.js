@@ -2,7 +2,7 @@ var React = require('react');
 
 const joinStyle ={
   color:"#6d6865",
-  fontSize:"20px",
+  fontSize:"1.5em",
   fontWeight:"lighter",
   fontFamily:"Futura"
 }

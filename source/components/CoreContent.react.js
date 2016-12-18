@@ -11,8 +11,8 @@ var Conduct = require('./Conduct.react')
 
 
 const iconStyle = {
-  maxHeight:"50px",
-  minHeight:"20px",
+  maxHeight:"80px",
+  minHeight:"50px",
   height:"auto",
   marginBottom:"10px",
   marginLeft:"5%",
