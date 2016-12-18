@@ -28,7 +28,7 @@ const description ={
 const linkOut ={
   textAlign:"right",
   color: "#fdf9f6",
-  fontSize: "1.5em",
+  fontSize: "2.5em",
   fontFamily:"Futura",
   fontWeight:"normal",
 }

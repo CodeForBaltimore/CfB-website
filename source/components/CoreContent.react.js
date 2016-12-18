@@ -43,7 +43,7 @@ var CoreContent = React.createClass({
     var connectIcons = (
       <Row style={{marginBottom:"10px"}}>
         <Col xs={2} className="pull-right">
-          <a href="" target="_blank">
+          <a href="https://www.meetup.com/Code-for-Baltimore/" target="_blank">
             <img className="pull-right" style={iconStyle} src="/images/meetup.png"/>
           </a>
         </Col>
@@ -52,7 +52,7 @@ var CoreContent = React.createClass({
             <img className="pull-right" style={iconStyle} src="/images/Github.png"/>
           </a>
         </Col>
-        <Col xs={2} className="pull-right">
+        <Col hidden={true} xs={2} className="pull-right">
           <a href="" target="_blank">
             <img className="pull-right" style={iconStyle} src="/images/Slack.png"/>
           </a>
