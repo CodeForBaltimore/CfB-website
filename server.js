@@ -9,8 +9,8 @@ var config = require("./private/config.js")
 var request = require('request');
 
 //local host only example
-var ip_addr = '127.0.0.1';
-var port = '3000';
+var ip_addr = 'process.env.IP';
+var port = '80';
 
 var server = function() {
 
