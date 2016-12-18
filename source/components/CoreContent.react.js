@@ -47,16 +47,16 @@ var NAME = React.createClass({
     var connectIcons = (
       <Row>
         <a href="" target="_blank">
-          <img className="pull-right" style={iconStyle} src="/images/Meetup.png"/>
+          <img className="pull-right" style={iconStyle} src="/images/meetup.png"/>
         </a>
         <a href="https://github.com/CodeForBaltimore" target="_blank">
-          <img className="pull-right" style={iconStyle} src="/images/github.png"/>
+          <img className="pull-right" style={iconStyle} src="/images/Github.png"/>
         </a>
         <a href="" target="_blank">
-          <img className="pull-right" style={iconStyle} src="/images/slack.png"/>
+          <img className="pull-right" style={iconStyle} src="/images/Slack.png"/>
         </a>
         <a href="https://twitter.com/codeforbmore" target="_blank">
-          <img className="pull-right" style={iconStyle} src="/images/twitter.png"/>
+          <img className="pull-right" style={iconStyle} src="/images/Twitter.png"/>
         </a>
         <a href="https://www.facebook.com/CodeForBaltimore/" target="_blank">
           <img className="pull-right" style={iconStyle} src="/images/facebook.png"/>
