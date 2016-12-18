@@ -9,7 +9,7 @@ var config = require("./private/config.js")
 var request = require('request');
 
 //local host only example
-var ip_addr = 'process.env.IP';
+// var ip_addr = 'process.env.IP';
 var port = '80';
 
 var server = function() {
@@ -20,13 +20,13 @@ var server = function() {
 
   self.setupVariables = function() {
     //  Set the environment variables we need.
-    self.ipaddress = ip_addr || '127.0.0.1';
+    // self.ipaddress = ip_addr || '127.0.0.1';
     self.port = port || 8080;
 
-    if (typeof self.ipaddress === "undefined") {
-      console.warn('No IP var, using 127.0.0.1');
-      self.ipaddress = "127.0.0.1";
-    }
+    // if (typeof self.ipaddress === "undefined") {
+    //   console.warn('No IP var, using 127.0.0.1');
+    //   self.ipaddress = "127.0.0.1";
+    // }
   };
 
 
@@ -183,7 +183,7 @@ var server = function() {
    */
   self.start = function() {
     //  Start the app on the specific interface (and port).
-    self.app.listen(self.port, self.ipaddress, function() {
+    self.app.listen(self.port, function() {
       console.log('%s: Node server started on %s:%d ...',
         Date(Date.now()), self.ipaddress, self.port);
     });
