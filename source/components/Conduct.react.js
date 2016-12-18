@@ -10,7 +10,7 @@ const wrapper={
 const title ={
   color: "#3d5a6c",
   maxHeight: "50px",
-  fontSize: "1.2em",
+  fontSize: "3em",
   fontFamily:"Futura",
   fontWeight:"bold",
   textAlign:"left"
@@ -19,7 +19,7 @@ const title ={
 const description ={
   textAlign:"left",
   color: "#fdf9f6",
-  fontSize: "0.9em",
+  fontSize: "1.2em",
   fontFamily:"sans-serif",
   fontWeight:"lighter",
   overflow: "ellipsis"
@@ -28,7 +28,7 @@ const description ={
 const linkOut ={
   textAlign:"right",
   color: "#fdf9f6",
-  fontSize: "1.2em",
+  fontSize: "1.5em",
   fontFamily:"Futura",
   fontWeight:"normal",
 }
@@ -61,7 +61,7 @@ var Conduct = React.createClass({
       <Row style={{padding:"15px"}}>
         <Col xs={12} >
           <Row style={linkOut}>
-            <a  style={{color:"#3d5a6c"}} href="https://github.com/codeforamerica/codeofconduct" >
+            <a  style={{color:"#3d5a6c"}} href="https://github.com/CodeForBaltimore/CodeOfConduct" >
               READ ON GITUB
               <img src="/images/Arrow_Blue.png" style={{height:"25px"}}/>
             </a>
