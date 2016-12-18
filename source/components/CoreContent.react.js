@@ -14,11 +14,8 @@ const iconStyle = {
   maxHeight:"80px",
   minHeight:"50px",
   height:"auto",
-  marginBottom:"10px",
-  marginLeft:"5%",
-  marginRight:"2%"
 }
-var NAME = React.createClass({
+var CoreContent = React.createClass({
 
   //default API ----------------
 
@@ -46,21 +43,31 @@ var NAME = React.createClass({
     var featured = <Featured />
     var connectIcons = (
       <Row>
-        <a href="" target="_blank">
-          <img className="pull-right" style={iconStyle} src="/images/meetup.png"/>
-        </a>
-        <a href="https://github.com/CodeForBaltimore" target="_blank">
-          <img className="pull-right" style={iconStyle} src="/images/Github.png"/>
-        </a>
-        <a href="" target="_blank">
-          <img className="pull-right" style={iconStyle} src="/images/Slack.png"/>
-        </a>
-        <a href="https://twitter.com/codeforbmore" target="_blank">
-          <img className="pull-right" style={iconStyle} src="/images/Twitter.png"/>
-        </a>
-        <a href="https://www.facebook.com/CodeForBaltimore/" target="_blank">
-          <img className="pull-right" style={iconStyle} src="/images/facebook.png"/>
-        </a>
+        <Col xs={2} md={1}>
+          <a href="" target="_blank">
+            <img className="pull-right" style={iconStyle} src="/images/meetup.png"/>
+          </a>
+        </Col>
+        <Col xs={2} md={1}>
+          <a href="https://github.com/CodeForBaltimore" target="_blank">
+            <img className="pull-right" style={iconStyle} src="/images/Github.png"/>
+          </a>
+        </Col>
+        <Col xs={2} md={1}>
+          <a href="" target="_blank">
+            <img className="pull-right" style={iconStyle} src="/images/Slack.png"/>
+          </a>
+        </Col>
+        <Col xs={2} md={1}>
+          <a href="https://twitter.com/codeforbmore" target="_blank">
+            <img className="pull-right" style={iconStyle} src="/images/Twitter.png"/>
+          </a>
+        </Col>
+        <Col xs={2} md={1}>
+          <a href="https://www.facebook.com/CodeForBaltimore/" target="_blank">
+            <img className="pull-right" style={iconStyle} src="/images/facebook.png"/>
+          </a>
+        </Col>
 
       </Row>
 
@@ -151,4 +158,4 @@ var NAME = React.createClass({
 
 });
 
-module.exports = NAME;
+module.exports = CoreContent;
