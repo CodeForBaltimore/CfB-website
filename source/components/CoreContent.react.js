@@ -43,27 +43,27 @@ var CoreContent = React.createClass({
     var featured = <Featured />
     var connectIcons = (
       <Row>
-        <Col xs={2} md={1}>
+        <Col xs={2} >
           <a href="" target="_blank">
             <img className="pull-right" style={iconStyle} src="/images/meetup.png"/>
           </a>
         </Col>
-        <Col xs={2} md={1}>
+        <Col xs={2} >
           <a href="https://github.com/CodeForBaltimore" target="_blank">
             <img className="pull-right" style={iconStyle} src="/images/Github.png"/>
           </a>
         </Col>
-        <Col xs={2} md={1}>
+        <Col xs={2} >
           <a href="" target="_blank">
             <img className="pull-right" style={iconStyle} src="/images/Slack.png"/>
           </a>
         </Col>
-        <Col xs={2} md={1}>
+        <Col xs={2} >
           <a href="https://twitter.com/codeforbmore" target="_blank">
             <img className="pull-right" style={iconStyle} src="/images/Twitter.png"/>
           </a>
         </Col>
-        <Col xs={2} md={1}>
+        <Col xs={2} >
           <a href="https://www.facebook.com/CodeForBaltimore/" target="_blank">
             <img className="pull-right" style={iconStyle} src="/images/facebook.png"/>
           </a>
