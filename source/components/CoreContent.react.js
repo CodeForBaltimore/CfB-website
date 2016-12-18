@@ -14,9 +14,9 @@ const iconStyle = {
   maxHeight:"50px",
   minHeight:"20px",
   height:"auto",
-  margin:"10px",
-  marginLeft:"7%",
-  marginRight:"5%"
+  marginBottom:"10px",
+  marginLeft:"5%",
+  marginRight:"2%"
 }
 var NAME = React.createClass({
 
