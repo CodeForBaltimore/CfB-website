@@ -12,8 +12,7 @@ var Conduct = require('./Conduct.react')
 
 const iconStyle = {
   maxHeight:"80px",
-  minHeight:"50px",
-  height:"auto",
+  height:"auto"
 }
 var CoreContent = React.createClass({
 

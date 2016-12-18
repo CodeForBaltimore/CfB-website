@@ -7,6 +7,13 @@ const joinStyle ={
   fontFamily:"Futura"
 }
 
+const altJoinStyle ={
+  color:"#6d6865",
+  fontSize:"2.5em",
+  fontWeight:"lighter",
+  fontFamily:"Futura"
+}
+
 var Join = React.createClass({
 
   //default API ----------------
@@ -30,10 +37,25 @@ var Join = React.createClass({
   render: function() {
     return (
       <div style={joinStyle}>
-      We are civic hackers interested in contributing to open data and open source in Baltimore.<br />
-      All skills levels and skill types are welcome; coders need designers, project managers, champions, and data ninjas.
+          We are civic hackers interested in contributing to open data and open source in Baltimore.<br />
+          All skills levels and skill types are welcome; coders need designers, project managers, champions, and data ninjas.
 
       </div>
+
+      <Col xsHidden={true} smHidden={true} xs={12}>
+          <div style={joinStyle}>
+              We are civic hackers interested in contributing to open data and open source in Baltimore.<br />
+              All skills levels and skill types are welcome; coders need designers, project managers, champions, and data ninjas.
+
+          </div>
+      </Col>
+
+      <Col mdHidden={true}  lgHidden={true} xs={12}>
+          <div style={altJoinStyle}>
+              We are civic hackers interested in contributing to open data and open source in Baltimore.<br />
+              All skills levels and skill types are welcome; coders need designers, project managers, champions, and data ninjas.
+          </div>
+      </Col>
     );
 
   }
