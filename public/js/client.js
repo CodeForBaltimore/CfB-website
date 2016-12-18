@@ -40766,7 +40766,7 @@ var cardStyle = {
 
 var barStyle = {
   backgroundColor: "#FFAE64",
-  width: "110%",
+  width: "100%",
   height: "5px"
 };
 
@@ -40892,9 +40892,9 @@ var iconStyle = {
   maxHeight: "50px",
   minHeight: "20px",
   height: "auto",
-  margin: "10px",
-  marginLeft: "7%",
-  marginRight: "5%"
+  marginBottom: "10px",
+  marginLeft: "5%",
+  marginRight: "2%"
 };
 var NAME = React.createClass({
   displayName: 'NAME',
@@ -40988,12 +40988,6 @@ var NAME = React.createClass({
           content: photos,
 
           headerIcons: React.createElement(Row, null)
-        }),
-        React.createElement(ContentCard, {
-          headerText: 'Code of Conduct',
-          subHeaderText: 'our guide',
-          align: 'left',
-          content: conduct
         })
       ),
       React.createElement(
@@ -41007,10 +41001,16 @@ var NAME = React.createClass({
         }),
         React.createElement(ContentCard, {
           headerText: 'PARTNERS',
-          subHeaderText: 'meet our friends',
+          subHeaderText: 'meet our friends.',
           showBar: true,
           align: 'right',
           content: partners
+        }),
+        React.createElement(ContentCard, {
+          headerText: 'CODE OF CONDUCT',
+          subHeaderText: 'our guide.',
+          align: 'right',
+          content: conduct
         })
       )
     );
@@ -41299,7 +41299,7 @@ var React = require('react');
 
 var joinStyle = {
   color: "#6d6865",
-  fontSize: "1.5em",
+  fontSize: "20px",
   fontWeight: "lighter",
   fontFamily: "Futura"
 };
@@ -41332,7 +41332,7 @@ var Join = React.createClass({
       { style: joinStyle },
       "We are civic hackers interested in contributing to open data and open source in Baltimore.",
       React.createElement("br", null),
-      "All skills levels and skill types are welcome, coders need designers, project managers, champions, and data ninjas."
+      "All skills levels and skill types are welcome; coders need designers, project managers, champions, and data ninjas."
     );
   }
 
@@ -41703,12 +41703,20 @@ var Photos = React.createClass({
         React.createElement(
           'div',
           { style: secondImage },
-          React.createElement('img', { src: '/images/image2.jpg', style: squareImage })
+          React.createElement(
+            'a',
+            { target: '_blank', href: 'https://www.facebook.com/pg/CodeForBaltimore/photos/' },
+            React.createElement('img', { src: '/images/image2.jpg', style: squareImage })
+          )
         ),
         React.createElement(
           'div',
           { style: thirdImage },
-          React.createElement('img', { src: '/images/image3.jpg', style: squareImage })
+          React.createElement(
+            'a',
+            { target: '_blank', href: 'https://www.facebook.com/pg/CodeForBaltimore/photos/' },
+            React.createElement('img', { src: '/images/image3.jpg', style: squareImage })
+          )
         )
       ),
       React.createElement(
@@ -41717,7 +41725,11 @@ var Photos = React.createClass({
         React.createElement(
           'div',
           { style: featuredImage },
-          React.createElement('img', { src: '/images/mainImage.jpg', style: squareImage })
+          React.createElement(
+            'a',
+            { target: '_blank', href: 'https://www.facebook.com/pg/CodeForBaltimore/photos/' },
+            React.createElement('img', { src: '/images/mainImage.jpg', style: squareImage })
+          )
         )
       )
     );
