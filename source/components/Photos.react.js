@@ -59,17 +59,23 @@ var Photos = React.createClass({
 
         <Col xs={4} style={wrappers}>
           <div style={secondImage}>
-            <img src="/images/image2.jpg" style={squareImage}/>
+            <a target="_blank" href="https://www.facebook.com/pg/CodeForBaltimore/photos/">
+              <img src="/images/image2.jpg" style={squareImage}/>
+            </a>
           </div>
           <div style={thirdImage}>
+          <a target="_blank" href="https://www.facebook.com/pg/CodeForBaltimore/photos/">
             <img src="/images/image3.jpg" style={squareImage}/>
+          </a>
           </div>
 
         </Col>
 
         <Col xs={8} style={wrappers}>
           <div style={featuredImage}>
+          <a target="_blank" href="https://www.facebook.com/pg/CodeForBaltimore/photos/">
             <img src="/images/mainImage.jpg" style={squareImage}/>
+          </a>
           </div>
 
         </Col>

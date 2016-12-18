@@ -40930,22 +40930,22 @@ var NAME = React.createClass({
       React.createElement(
         'a',
         { href: '', target: '_blank' },
-        React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Meetup.png' })
+        React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/meetup.png' })
       ),
       React.createElement(
         'a',
         { href: 'https://github.com/CodeForBaltimore', target: '_blank' },
-        React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/github.png' })
+        React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Github.png' })
       ),
       React.createElement(
         'a',
         { href: '', target: '_blank' },
-        React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/slack.png' })
+        React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Slack.png' })
       ),
       React.createElement(
         'a',
         { href: 'https://twitter.com/codeforbmore', target: '_blank' },
-        React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/twitter.png' })
+        React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Twitter.png' })
       ),
       React.createElement(
         'a',

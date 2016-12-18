@@ -107,12 +107,7 @@ var NAME = React.createClass({
           headerIcons={<Row></Row>}
         />
 
-        <ContentCard
-          headerText="Code of Conduct"
-          subHeaderText="our guide"
-          align="left"
-          content={conduct}
-        />
+
 
 
       </Col>
@@ -128,10 +123,17 @@ var NAME = React.createClass({
 
         <ContentCard
           headerText="PARTNERS"
-          subHeaderText="meet our friends"
+          subHeaderText="meet our friends."
           showBar={true}
           align="right"
           content={partners}
+        />
+
+        <ContentCard
+          headerText="CODE OF CONDUCT"
+          subHeaderText="our guide."
+          align="right"
+          content={conduct}
         />
       </Col>
 
