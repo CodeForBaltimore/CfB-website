@@ -1,4 +1,7 @@
 var React = require('react');
+var Col = require('react-bootstrap').Col;
+var Row = require('react-bootstrap').Row;
+
 
 const joinStyle ={
   color:"#6d6865",
