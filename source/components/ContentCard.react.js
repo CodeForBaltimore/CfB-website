@@ -34,14 +34,14 @@ const cardStyle ={
 
 const barStyle={
   backgroundColor:"#FFAE64",
-  width:"110%",
+  width:"100%",
   height:"5px"
 }
 
 
 
 
-var NAME = React.createClass({
+var Card = React.createClass({
 
   //default API ----------------
 
@@ -70,12 +70,12 @@ var NAME = React.createClass({
 
         <div style={cardStyle}>
         <Row>
-          <Col sm={5} xs={12} className={this.props.align =="right" ? "pull-right" :"pull-left" }>
+          <Col md={5} sm={12} xs={12} className={this.props.align =="right" ? "pull-right" :"pull-left" }>
             <Row><Col xs={12} style={headerStyle}>{this.props.headerText}</Col> </Row>
             <Row><Col xs={12} style={subHeaderStyle}>{this.props.subHeaderText}</Col> </Row>
           </Col>
 
-          <Col sm={7} xs={12} style={headerStyle} className={this.props.align =="right" ? "pull-left" :"pull-right" }>
+          <Col md={7} sm={12} xs={12} style={headerStyle} className={this.props.align =="right" ? "pull-left" :"pull-right" }>
               {this.props.headerIcons}
           </Col>
         </Row>
@@ -111,4 +111,4 @@ var NAME = React.createClass({
 
 });
 
-module.exports = NAME;
+module.exports = Card;

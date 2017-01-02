@@ -1,8 +1,18 @@
 var React = require('react');
+var Col = require('react-bootstrap').Col;
+var Row = require('react-bootstrap').Row;
+
 
 const joinStyle ={
   color:"#6d6865",
   fontSize:"1.5em",
+  fontWeight:"lighter",
+  fontFamily:"Futura"
+}
+
+const altJoinStyle ={
+  color:"#6d6865",
+  fontSize:"3em",
   fontWeight:"lighter",
   fontFamily:"Futura"
 }
@@ -29,12 +39,21 @@ var Join = React.createClass({
 
   render: function() {
     return (
-      <div style={joinStyle}>
-        We are civic hackers interested in contributing to open data and open source in Baltimore.
-        <br />
-        All skills levels and skill types are welcome, coders need designers, project managers, champions, and data ninjas.
+      <div >
+
+        <Col style={joinStyle} xsHidden={true} smHidden={true} xs={12}>
+
+                We are civic hackers interested in contributing to open data and open source in Baltimore.<br />
+                All skill levels and types are welcome; coders need designers, project managers, champions, and data ninjas.
 
 
+        </Col>
+
+        <Col style={altJoinStyle} mdHidden={true}  lgHidden={true} xs={12}>
+
+                We are civic hackers interested in contributing to open data and open source in Baltimore.<br />
+                All skill levels and types are welcome; coders need designers, project managers, champions, and data ninjas.
+        </Col>
       </div>
     );
 

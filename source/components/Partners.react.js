@@ -5,7 +5,7 @@ var Row = require('react-bootstrap').Row;
 const partner ={
   color: "#3d5a6c",
   maxHeight: "50px",
-  fontSize: "1.8em",
+  fontSize: "2.5em",
   overflow: "ellipsis",
   fontFamily:"Futura",
   fontWeight:"lighter",
@@ -37,9 +37,18 @@ var Partners = React.createClass({
     return (
       <Row style={{padding:"15px"}}>
 
-          <h1 style={partner}>Baltimore City Police</h1>
-          <h1 style={partner}>Councilman Zeke Cohen</h1>
-          <h1 style={partner}>Code For America</h1>
+
+          <a href="https://www.baltimorepolice.org/" target="_blank">
+            <h1 style={partner}>Baltimore City Police</h1>
+          </a>
+
+          <a href="http://www.zekecohen.com/" target="_blank">
+            <h1 style={partner}>Councilman Zeke Cohen</h1>
+          </a>
+
+          <a href="https://www.codeforamerica.org/" target="_blank">
+            <h1 style={partner}>Code For America</h1>
+          </a>
 
 
       </Row>

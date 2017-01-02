@@ -5,24 +5,25 @@ var Col = require('react-bootstrap').Col;
 var Row = require('react-bootstrap').Row;
 
 const date = { color: "#3d5a6c" }
-const meetupCalendar = { flex:1, maxWidth: "120px" }
+const meetupCalendar = { flex:1, maxWidth: "200px" }
 const meetupCalContainer = {
-  width: "100px",
+  width: "100%",
   textAlign: "center",
   float: "left",
   backgroundColor:"#fdf9f6",
   border:"1px solid #3d5a6c"
 }
-const meetupMonth = { background: "#3d5a6c", color: "#fdf9f6", fontSize: "24px" }
+const meetupMonth = { background: "#3d5a6c", color: "#fdf9f6", fontSize: "1.5em" }
 const meetupCalBody = { paddingBottom: "5px" }
-const meetupDay = { fontSize: "36px" }
-const meetupWeekday = { fontSize: "14px", marginTop: "-5px" }
+const meetupDay = { fontSize: "3em" }
+const meetupWeekday = { fontSize: "1.2em", marginTop: "-5px" }
 const description = {
   textAlign:"left",
   color: "#6d6865",
-  maxHeight: "100px",
-  fontSize: "1.3em",
-  overflow: "ellipsis",
+  maxHeight: "300px",
+  fontSize: "2em",
+  overflow: "hidden",
+  textOverflow:"ellipsis",
   fontFamily:"sans-serif",
   fontWeight:"lighter",
   maxHeight:"100px"
@@ -30,7 +31,7 @@ const description = {
 const title ={
   color: "#3d5a6c",
   maxHeight: "123.5px",
-  fontSize: "2em",
+  fontSize: "2.5em",
   overflow: "ellipsis",
   fontFamily:"Futura",
   fontWeight:"bold",
@@ -44,12 +45,14 @@ const rsvpA = {
   maxHeight:"30px",
   textAlign:"left",
   fontFamily:"sans-serif",
-  fontWeight:"normal"
+  fontWeight:"normal",
+  fontSize: "2em",
 }
 const rsvpCount = {
   color: "#3d5a6c",
   fontFamily:"sans-serif",
-  textAlign:"left"
+  textAlign:"left",
+  fontSize: "2em",
 }
 const showMe = {border:"1px solid blue"}
 

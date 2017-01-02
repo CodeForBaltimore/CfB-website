@@ -11,14 +11,10 @@ var Conduct = require('./Conduct.react')
 
 
 const iconStyle = {
-  maxHeight:"50px",
-  minHeight:"20px",
-  height:"auto",
-  margin:"10px",
-  marginLeft:"7%",
-  marginRight:"5%"
+  maxHeight:"80px",
+  height:"auto"
 }
-var NAME = React.createClass({
+var CoreContent = React.createClass({
 
   //default API ----------------
 
@@ -45,22 +41,32 @@ var NAME = React.createClass({
     var joinus = <JoinUs />
     var featured = <Featured />
     var connectIcons = (
-      <Row>
-        <a href="" target="_blank">
-          <img className="pull-right" style={iconStyle} src="/images/Meetup.png"/>
-        </a>
-        <a href="https://github.com/CodeForBaltimore" target="_blank">
-          <img className="pull-right" style={iconStyle} src="/images/github.png"/>
-        </a>
-        <a href="" target="_blank">
-          <img className="pull-right" style={iconStyle} src="/images/slack.png"/>
-        </a>
-        <a href="https://twitter.com/codeforbmore" target="_blank">
-          <img className="pull-right" style={iconStyle} src="/images/twitter.png"/>
-        </a>
-        <a href="https://www.facebook.com/CodeForBaltimore/" target="_blank">
-          <img className="pull-right" style={iconStyle} src="/images/facebook.png"/>
-        </a>
+      <Row style={{marginBottom:"10px"}}>
+        <Col xs={2} className="pull-right">
+          <a href="https://www.meetup.com/Code-for-Baltimore/" target="_blank">
+            <img className="pull-right" style={iconStyle} src="/images/meetup.png"/>
+          </a>
+        </Col>
+        <Col xs={2} className="pull-right">
+          <a href="https://github.com/CodeForBaltimore" target="_blank">
+            <img className="pull-right" style={iconStyle} src="/images/Github.png"/>
+          </a>
+        </Col>
+        <Col hidden={true} xs={2} className="pull-right">
+          <a href="" target="_blank">
+            <img className="pull-right" style={iconStyle} src="/images/Slack.png"/>
+          </a>
+        </Col>
+        <Col xs={2} className="pull-right">
+          <a href="https://twitter.com/codeforbmore" target="_blank">
+            <img className="pull-right" style={iconStyle} src="/images/Twitter.png"/>
+          </a>
+        </Col>
+        <Col xs={2} className="pull-right">
+          <a href="https://www.facebook.com/CodeForBaltimore/" target="_blank">
+            <img className="pull-right" style={iconStyle} src="/images/facebook.png"/>
+          </a>
+        </Col>
 
       </Row>
 
@@ -107,12 +113,7 @@ var NAME = React.createClass({
           headerIcons={<Row></Row>}
         />
 
-        <ContentCard
-          headerText="Code of Conduct"
-          subHeaderText="our guide"
-          align="left"
-          content={conduct}
-        />
+
 
 
       </Col>
@@ -128,10 +129,17 @@ var NAME = React.createClass({
 
         <ContentCard
           headerText="PARTNERS"
-          subHeaderText="meet our friends"
+          subHeaderText="meet our friends."
           showBar={true}
           align="right"
           content={partners}
+        />
+
+        <ContentCard
+          headerText="CODE OF CONDUCT"
+          subHeaderText="our guide."
+          align="right"
+          content={conduct}
         />
       </Col>
 
@@ -149,4 +157,4 @@ var NAME = React.createClass({
 
 });
 
-module.exports = NAME;
+module.exports = CoreContent;
