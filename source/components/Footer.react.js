@@ -38,7 +38,7 @@ var Footer = React.createClass({
   render: function() {
     return (
       <Row style={footerStyle}>
-        <center><a style={{color:"white"}} href="www.codeforbaltimore.org">codeforbaltimore.org</a></center>
+        <center><a style={{color:"white"}} href="http://codeforbaltimore.org">codeforbaltimore.org</a></center>
       </Row>
     );
 
