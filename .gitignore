@@ -1,6 +1,6 @@
 #build files
-client.js
-style.css
+*client.js
+*style.css
 
 # Logs
 logs
