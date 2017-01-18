@@ -41116,7 +41116,7 @@ var Featured = React.createClass({
           React.createElement(
             'a',
             { href: 'https://github.com/CodeForBaltimore', target: '_blank' },
-            React.createElement('img', { src: '/images/main.jpg', style: squareImage })
+            React.createElement('img', { src: '/images/p1.jpg', style: squareImage })
           )
         )
       ),
@@ -41129,7 +41129,7 @@ var Featured = React.createClass({
           React.createElement(
             'a',
             { href: 'https://github.com/CodeForBaltimore', target: '_blank' },
-            React.createElement('img', { src: '/images/2.jpg', style: squareImage })
+            React.createElement('img', { src: '/images/p2.jpg', style: squareImage })
           )
         ),
         React.createElement(
@@ -41138,7 +41138,7 @@ var Featured = React.createClass({
           React.createElement(
             'a',
             { href: 'https://github.com/CodeForBaltimore', target: '_blank' },
-            React.createElement('img', { src: '/images/3.jpg', style: squareImage })
+            React.createElement('img', { src: '/images/p3.jpg', style: squareImage })
           )
         )
       )
@@ -41397,8 +41397,6 @@ module.exports = Join;
 },{"react":431,"react-bootstrap":250}],448:[function(require,module,exports){
 "use strict";
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var React = require('react');
 var meetUpActions = require("../actions/meetUp.actions.js");
 var meetUpStore = require("../stores/meetUp.store.js");
@@ -41418,21 +41416,19 @@ var meetupMonth = { background: "#3d5a6c", color: "#fdf9f6", fontSize: "1.5em" }
 var meetupCalBody = { paddingBottom: "5px" };
 var meetupDay = { fontSize: "3em" };
 var meetupWeekday = { fontSize: "1.2em", marginTop: "-5px" };
-var description = _defineProperty({
+var description = {
   textAlign: "left",
   color: "#6d6865",
-  maxHeight: "300px",
-  fontSize: "2em",
+  fontSize: "1.5em",
   overflow: "hidden",
   textOverflow: "ellipsis",
   fontFamily: "sans-serif",
   fontWeight: "lighter"
-}, "maxHeight", "100px");
+};
 var title = {
   color: "#3d5a6c",
-  maxHeight: "123.5px",
-  fontSize: "2.5em",
-  overflow: "ellipsis",
+  fontSize: "2.2em",
+  textOverflow: "ellipsis",
   fontFamily: "Futura",
   fontWeight: "bold",
   textAlign: "left"

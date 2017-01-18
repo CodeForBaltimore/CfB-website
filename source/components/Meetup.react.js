@@ -20,19 +20,16 @@ const meetupWeekday = { fontSize: "1.2em", marginTop: "-5px" }
 const description = {
   textAlign:"left",
   color: "#6d6865",
-  maxHeight: "300px",
-  fontSize: "2em",
+  fontSize: "1.5em",
   overflow: "hidden",
   textOverflow:"ellipsis",
   fontFamily:"sans-serif",
-  fontWeight:"lighter",
-  maxHeight:"100px"
+  fontWeight:"lighter"
 }
 const title ={
   color: "#3d5a6c",
-  maxHeight: "123.5px",
-  fontSize: "2.5em",
-  overflow: "ellipsis",
+  fontSize: "2.2em",
+  textOverflow: "ellipsis",
   fontFamily:"Futura",
   fontWeight:"bold",
   textAlign:"left"
