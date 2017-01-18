@@ -40651,7 +40651,7 @@ var wrapper = {
 var title = {
   color: "#3d5a6c",
   maxHeight: "50px",
-  fontSize: "1.2em",
+  fontSize: "2.5em",
   fontFamily: "Futura",
   fontWeight: "bold",
   textAlign: "left"
@@ -40660,7 +40660,7 @@ var title = {
 var description = {
   textAlign: "left",
   color: "#fdf9f6",
-  fontSize: "0.9em",
+  fontSize: "1.2em",
   fontFamily: "sans-serif",
   fontWeight: "lighter",
   overflow: "ellipsis"
@@ -40669,7 +40669,7 @@ var description = {
 var linkOut = {
   textAlign: "right",
   color: "#fdf9f6",
-  fontSize: "1.2em",
+  fontSize: "2em",
   fontFamily: "Futura",
   fontWeight: "normal"
 };
@@ -40708,8 +40708,8 @@ var Conduct = React.createClass({
           { style: linkOut },
           React.createElement(
             'a',
-            { style: { color: "#3d5a6c" }, href: 'https://github.com/codeforamerica/codeofconduct' },
-            'READ ON GITUB',
+            { style: { color: "#3d5a6c" }, href: 'https://github.com/CodeForBaltimore/CodeOfConduct' },
+            'Read on Github',
             React.createElement('img', { src: '/images/Arrow_Blue.png', style: { height: "25px" } })
           )
         )
@@ -40770,8 +40770,8 @@ var barStyle = {
   height: "5px"
 };
 
-var NAME = React.createClass({
-  displayName: 'NAME',
+var Card = React.createClass({
+  displayName: 'Card',
 
 
   //default API ----------------
@@ -40805,7 +40805,7 @@ var NAME = React.createClass({
         null,
         React.createElement(
           Col,
-          { sm: 5, xs: 12, className: this.props.align == "right" ? "pull-right" : "pull-left" },
+          { md: 5, sm: 12, xs: 12, className: this.props.align == "right" ? "pull-right" : "pull-left" },
           React.createElement(
             Row,
             null,
@@ -40829,7 +40829,7 @@ var NAME = React.createClass({
         ),
         React.createElement(
           Col,
-          { sm: 7, xs: 12, style: headerStyle, className: this.props.align == "right" ? "pull-left" : "pull-right" },
+          { md: 7, sm: 12, xs: 12, style: headerStyle, className: this.props.align == "right" ? "pull-left" : "pull-right" },
           this.props.headerIcons
         )
       ),
@@ -40872,7 +40872,7 @@ var NAME = React.createClass({
 
 });
 
-module.exports = NAME;
+module.exports = Card;
 
 },{"react":431,"react-bootstrap":250}],443:[function(require,module,exports){
 'use strict';
@@ -40890,14 +40890,10 @@ var Conduct = require('./Conduct.react');
 
 var iconStyle = {
   maxHeight: "80px",
-  minHeight: "50px",
-  height: "auto",
-  marginBottom: "10px",
-  marginLeft: "5%",
-  marginRight: "2%"
+  height: "auto"
 };
-var NAME = React.createClass({
-  displayName: 'NAME',
+var CoreContent = React.createClass({
+  displayName: 'CoreContent',
 
 
   //default API ----------------
@@ -40926,31 +40922,51 @@ var NAME = React.createClass({
     var featured = React.createElement(Featured, null);
     var connectIcons = React.createElement(
       Row,
-      null,
+      { style: { marginBottom: "10px" } },
       React.createElement(
-        'a',
-        { href: '', target: '_blank' },
-        React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/meetup.png' })
+        Col,
+        { xs: 2, className: 'pull-right' },
+        React.createElement(
+          'a',
+          { href: 'https://www.meetup.com/Code-for-Baltimore/', target: '_blank' },
+          React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/meetup.png' })
+        )
       ),
       React.createElement(
-        'a',
-        { href: 'https://github.com/CodeForBaltimore', target: '_blank' },
-        React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Github.png' })
+        Col,
+        { xs: 2, className: 'pull-right' },
+        React.createElement(
+          'a',
+          { href: 'https://github.com/CodeForBaltimore', target: '_blank' },
+          React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Github.png' })
+        )
       ),
       React.createElement(
-        'a',
-        { href: '', target: '_blank' },
-        React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Slack.png' })
+        Col,
+        { hidden: true, xs: 2, className: 'pull-right' },
+        React.createElement(
+          'a',
+          { href: '', target: '_blank' },
+          React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Slack.png' })
+        )
       ),
       React.createElement(
-        'a',
-        { href: 'https://twitter.com/codeforbmore', target: '_blank' },
-        React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Twitter.png' })
+        Col,
+        { xs: 2, className: 'pull-right' },
+        React.createElement(
+          'a',
+          { href: 'https://twitter.com/codeforbmore', target: '_blank' },
+          React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/Twitter.png' })
+        )
       ),
       React.createElement(
-        'a',
-        { href: 'https://www.facebook.com/CodeForBaltimore/', target: '_blank' },
-        React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/facebook.png' })
+        Col,
+        { xs: 2, className: 'pull-right' },
+        React.createElement(
+          'a',
+          { href: 'https://www.facebook.com/CodeForBaltimore/', target: '_blank' },
+          React.createElement('img', { className: 'pull-right', style: iconStyle, src: '/images/facebook.png' })
+        )
       )
     );
 
@@ -41024,7 +41040,7 @@ var NAME = React.createClass({
 
 });
 
-module.exports = NAME;
+module.exports = CoreContent;
 
 },{"./Conduct.react":441,"./ContentCard.react":442,"./Featured.react":444,"./JoinUs.react":447,"./Meetup.react":448,"./Partners.react":449,"./Photos.react":450,"react":431,"react-bootstrap":250}],444:[function(require,module,exports){
 'use strict';
@@ -41097,7 +41113,11 @@ var Featured = React.createClass({
         React.createElement(
           'div',
           { style: featuredImage },
-          React.createElement('img', { src: '/images/mainImage.jpg', style: squareImage })
+          React.createElement(
+            'a',
+            { href: 'https://github.com/CodeForBaltimore', target: '_blank' },
+            React.createElement('img', { src: '/images/main.jpg', style: squareImage })
+          )
         )
       ),
       React.createElement(
@@ -41106,12 +41126,20 @@ var Featured = React.createClass({
         React.createElement(
           'div',
           { style: secondImage },
-          React.createElement('img', { src: '/images/image2.jpg', style: squareImage })
+          React.createElement(
+            'a',
+            { href: 'https://github.com/CodeForBaltimore', target: '_blank' },
+            React.createElement('img', { src: '/images/2.jpg', style: squareImage })
+          )
         ),
         React.createElement(
           'div',
           { style: thirdImage },
-          React.createElement('img', { src: '/images/image3.jpg', style: squareImage })
+          React.createElement(
+            'a',
+            { href: 'https://github.com/CodeForBaltimore', target: '_blank' },
+            React.createElement('img', { src: '/images/3.jpg', style: squareImage })
+          )
         )
       )
     );
@@ -41176,7 +41204,7 @@ var Footer = React.createClass({
         null,
         React.createElement(
           'a',
-          { style: { color: "white" }, href: 'www.codeforbaltimore.org' },
+          { style: { color: "white" }, href: 'http://codeforbaltimore.org' },
           'codeforbaltimore.org'
         )
       )
@@ -41262,12 +41290,12 @@ var Header = React.createClass({
           Col,
           { xsHidden: true, md: 7, className: 'pull-right' },
           React.createElement(
-            'h1',
+            'h2',
             { style: headerStyle },
             this.props.headerText
           ),
           React.createElement(
-            'h2',
+            'h3',
             { style: subHeaderStyle },
             this.props.subHeaderText
           )
@@ -41280,7 +41308,7 @@ var Header = React.createClass({
           Col,
           { mdHidden: true, smHidden: true, lgHidden: true, xs: 12 },
           React.createElement(
-            'h1',
+            'h2',
             { style: altHeaderStyle },
             this.props.headerText
           )
@@ -41293,9 +41321,11 @@ var Header = React.createClass({
 module.exports = Header;
 
 },{"react":431,"react-bootstrap":250}],447:[function(require,module,exports){
-"use strict";
+'use strict';
 
 var React = require('react');
+var Col = require('react-bootstrap').Col;
+var Row = require('react-bootstrap').Row;
 
 var joinStyle = {
   color: "#6d6865",
@@ -41304,8 +41334,15 @@ var joinStyle = {
   fontFamily: "Futura"
 };
 
+var altJoinStyle = {
+  color: "#6d6865",
+  fontSize: "3em",
+  fontWeight: "lighter",
+  fontFamily: "Futura"
+};
+
 var Join = React.createClass({
-  displayName: "Join",
+  displayName: 'Join',
 
 
   //default API ----------------
@@ -41328,11 +41365,22 @@ var Join = React.createClass({
 
   render: function render() {
     return React.createElement(
-      "div",
-      { style: joinStyle },
-      "We are civic hackers interested in contributing to open data and open source in Baltimore.",
-      React.createElement("br", null),
-      "All skills levels and skill types are welcome; coders need designers, project managers, champions, and data ninjas."
+      'div',
+      null,
+      React.createElement(
+        Col,
+        { style: joinStyle, xsHidden: true, smHidden: true, xs: 12 },
+        'We are civic hackers interested in contributing to open data and open source in Baltimore.',
+        React.createElement('br', null),
+        'All skill levels and types are welcome; coders need designers, project managers, champions, and data ninjas.'
+      ),
+      React.createElement(
+        Col,
+        { style: altJoinStyle, mdHidden: true, lgHidden: true, xs: 12 },
+        'We are civic hackers interested in contributing to open data and open source in Baltimore.',
+        React.createElement('br', null),
+        'All skill levels and types are welcome; coders need designers, project managers, champions, and data ninjas.'
+      )
     );
   }
 
@@ -41346,7 +41394,7 @@ var Join = React.createClass({
 
 module.exports = Join;
 
-},{"react":431}],448:[function(require,module,exports){
+},{"react":431,"react-bootstrap":250}],448:[function(require,module,exports){
 "use strict";
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -41358,31 +41406,32 @@ var Col = require('react-bootstrap').Col;
 var Row = require('react-bootstrap').Row;
 
 var date = { color: "#3d5a6c" };
-var meetupCalendar = { flex: 1, maxWidth: "120px" };
+var meetupCalendar = { flex: 1, maxWidth: "200px" };
 var meetupCalContainer = {
-  width: "100px",
+  width: "100%",
   textAlign: "center",
   float: "left",
   backgroundColor: "#fdf9f6",
   border: "1px solid #3d5a6c"
 };
-var meetupMonth = { background: "#3d5a6c", color: "#fdf9f6", fontSize: "24px" };
+var meetupMonth = { background: "#3d5a6c", color: "#fdf9f6", fontSize: "1.5em" };
 var meetupCalBody = { paddingBottom: "5px" };
-var meetupDay = { fontSize: "36px" };
-var meetupWeekday = { fontSize: "14px", marginTop: "-5px" };
+var meetupDay = { fontSize: "3em" };
+var meetupWeekday = { fontSize: "1.2em", marginTop: "-5px" };
 var description = _defineProperty({
   textAlign: "left",
   color: "#6d6865",
-  maxHeight: "100px",
-  fontSize: "1.3em",
-  overflow: "ellipsis",
+  maxHeight: "300px",
+  fontSize: "2em",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
   fontFamily: "sans-serif",
   fontWeight: "lighter"
 }, "maxHeight", "100px");
 var title = {
   color: "#3d5a6c",
   maxHeight: "123.5px",
-  fontSize: "2em",
+  fontSize: "2.5em",
   overflow: "ellipsis",
   fontFamily: "Futura",
   fontWeight: "bold",
@@ -41396,12 +41445,14 @@ var rsvpA = {
   maxHeight: "30px",
   textAlign: "left",
   fontFamily: "sans-serif",
-  fontWeight: "normal"
+  fontWeight: "normal",
+  fontSize: "2em"
 };
 var rsvpCount = {
   color: "#3d5a6c",
   fontFamily: "sans-serif",
-  textAlign: "left"
+  textAlign: "left",
+  fontSize: "2em"
 };
 var showMe = { border: "1px solid blue" };
 
@@ -41572,7 +41623,7 @@ var Row = require('react-bootstrap').Row;
 var partner = {
   color: "#3d5a6c",
   maxHeight: "50px",
-  fontSize: "1.8em",
+  fontSize: "2.5em",
   overflow: "ellipsis",
   fontFamily: "Futura",
   fontWeight: "lighter",
@@ -41606,19 +41657,31 @@ var Partners = React.createClass({
       Row,
       { style: { padding: "15px" } },
       React.createElement(
-        'h1',
-        { style: partner },
-        'Baltimore City Police'
+        'a',
+        { href: 'https://www.baltimorepolice.org/', target: '_blank' },
+        React.createElement(
+          'h1',
+          { style: partner },
+          'Baltimore City Police'
+        )
       ),
       React.createElement(
-        'h1',
-        { style: partner },
-        'Councilman Zeke Cohen'
+        'a',
+        { href: 'http://www.zekecohen.com/', target: '_blank' },
+        React.createElement(
+          'h1',
+          { style: partner },
+          'Councilman Zeke Cohen'
+        )
       ),
       React.createElement(
-        'h1',
-        { style: partner },
-        'Code For America'
+        'a',
+        { href: 'https://www.codeforamerica.org/', target: '_blank' },
+        React.createElement(
+          'h1',
+          { style: partner },
+          'Code For America'
+        )
       )
     );
   }
@@ -41706,7 +41769,7 @@ var Photos = React.createClass({
           React.createElement(
             'a',
             { target: '_blank', href: 'https://www.facebook.com/pg/CodeForBaltimore/photos/' },
-            React.createElement('img', { src: '/images/image2.jpg', style: squareImage })
+            React.createElement('img', { src: '/images/3.jpg', style: squareImage })
           )
         ),
         React.createElement(
@@ -41715,7 +41778,7 @@ var Photos = React.createClass({
           React.createElement(
             'a',
             { target: '_blank', href: 'https://www.facebook.com/pg/CodeForBaltimore/photos/' },
-            React.createElement('img', { src: '/images/image3.jpg', style: squareImage })
+            React.createElement('img', { src: '/images/2.jpg', style: squareImage })
           )
         )
       ),
@@ -41728,7 +41791,7 @@ var Photos = React.createClass({
           React.createElement(
             'a',
             { target: '_blank', href: 'https://www.facebook.com/pg/CodeForBaltimore/photos/' },
-            React.createElement('img', { src: '/images/mainImage.jpg', style: squareImage })
+            React.createElement('img', { src: '/images/main.jpg', style: squareImage })
           )
         )
       )

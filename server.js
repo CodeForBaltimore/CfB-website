@@ -10,7 +10,7 @@ var request = require('request');
 
 //local host only example
 // var ip_addr = 'process.env.IP';
-var port = '80';
+var port = '8080';
 
 var server = function() {
 

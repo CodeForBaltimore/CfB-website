@@ -56,7 +56,7 @@ var Header = React.createClass({
           </Col>
           <Col xsHidden={true} md={7} className="pull-right">
             <h2 style={headerStyle}>{this.props.headerText}</h2>
-            <h3 style={subHeaderStyle}>{this.props.subHeaderText}</h2>
+            <h3 style={subHeaderStyle}>{this.props.subHeaderText}</h3>
           </Col>
         </Row>
         <Row>
