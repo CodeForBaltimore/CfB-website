@@ -40518,6 +40518,7 @@ var config = {};
 
 config.meetup = {};
 config.meetup.apiKey = "72373918225f3d7352265952386c2b";
+config.slack.apiKey = "xoxp-94301311829-94301311845-130197128401-b2172751d76904df0817d63824d3387d";
 
 module.exports = config;
 
