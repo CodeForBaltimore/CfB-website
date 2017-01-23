@@ -7,7 +7,7 @@ module.exports={
 
   fetchEvents:function(callback) {
 
-    fetch('/meetups')
+    fetch('./meetups')
     .then(function(response) {
         if (response.status >= 400) {
             throw new Error("Bad response from server");

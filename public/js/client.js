@@ -41857,7 +41857,7 @@ var Slack = React.createClass({
   handleSubmit: function handleSubmit(e) {
     console.log("handleSubmit");
 
-    if (this.getValidationState == 'success') {
+    if (this.getValidationState === 'success') {
       console.log("submit to slackRest");
       slackRest.postNewEmail(this.state.value, function (data) {
         console.log(data);
@@ -42031,7 +42031,7 @@ module.exports = {
 
     fetchEvents: function fetchEvents(callback) {
 
-        fetch('/meetups').then(function (response) {
+        fetch('./meetups').then(function (response) {
             if (response.status >= 400) {
                 throw new Error("Bad response from server");
             }
@@ -42062,7 +42062,7 @@ module.exports = {
       }
     };
 
-    fetch('/slack_invite', options).then(function (response) {
+    fetch('./slackinvite', options).then(function (response) {
       if (response.status >= 400) {
         throw new Error("Bad response from server");
       }

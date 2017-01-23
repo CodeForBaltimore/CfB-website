@@ -136,45 +136,6 @@ var server = function() {
 
       })
 
-
-
-
-    }
-
-    self.routes['/slack_invite'] = function(req, res) {
-
-      var pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      var valid = pattern.test(req.body.email);
-      if (valid){
-
-        var key = config.slack.apiKey
-
-        var url = "https://slack.com/api/users.admin.invite?token=" +  key + "&email=" + req.body.email
-
-
-        const options = {
-          url:url,
-          method: 'GET',
-          mode:"no-cors",
-          headers: {
-            'Access-Control-Allow-Origin':'*',
-            'Accept':'application/json',
-            'Content-Type': 'application/json'
-          }
-        }
-
-
-        request(options, function (error, response, body) {
-
-            // console.log(error, response, body) // Show the HTML for the Google homepage.
-
-            res.json(JSON.parse(body))
-
-        })
-
-
-      }
-
     }
 
 
@@ -200,6 +161,46 @@ var server = function() {
     for (var r in self.routes) {
       self.app.get(r, self.routes[r]);
     }
+
+    self.app.post('/slackinvite', function (req, res) {
+
+        console.log('slackinvite');
+        var pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        var valid = pattern.test(req.body.email);
+        if (valid){
+
+          var key = config.slack.apiKey
+
+          var url = "https://slack.com/api/users.admin.invite?token=" +  key + "&email=" + req.body.email
+
+
+          const options = {
+            url:url,
+            method: 'GET',
+            mode:"no-cors",
+            headers: {
+              'Access-Control-Allow-Origin':'*',
+              'Accept':'application/json',
+              'Content-Type': 'application/json'
+            }
+          }
+
+
+          request(options, function (error, response, body) {
+
+              // console.log(error, response, body) // Show the HTML for the Google homepage.
+
+              res.json(JSON.parse(body))
+
+          })
+
+
+        }
+
+    });
+
+
+
   };
 
 
@@ -214,6 +215,8 @@ var server = function() {
     // Create the express server and routes.
     self.initializeServer();
   };
+
+
 
 
   /**

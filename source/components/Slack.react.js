@@ -43,7 +43,7 @@ var Slack = React.createClass({
   handleSubmit:function(e) {
     console.log("handleSubmit");
 
-    if(this.getValidationState == 'success'){
+    if(this.getValidationState === 'success'){
       console.log("submit to slackRest");
       slackRest.postNewEmail(this.state.value, function (data) {
         console.log(data)

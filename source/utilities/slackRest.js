@@ -16,7 +16,7 @@ module.exports={
       }
     }
 
-    fetch('/slack_invite', options)
+    fetch('./slackinvite', options)
     .then(function(response) {
         if (response.status >= 400) {
             throw new Error("Bad response from server");
