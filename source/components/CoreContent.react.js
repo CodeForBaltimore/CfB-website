@@ -108,7 +108,7 @@ var CoreContent = React.createClass({
 
         <ContentCard
           headerText="SLACK"
-          subHeaderText="Join the conversation"
+          subHeaderText="join the conversation."
           align="left"
           content={slack}
           showBar={true}
