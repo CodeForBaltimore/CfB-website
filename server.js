@@ -1,6 +1,7 @@
 #!/bin/env node
 
 var express = require('express');
+var bodyParser  = require('body-parser');
 var fs = require('fs');
 var React = require('react');
 var ReactDOMServer = require('react-dom/server');
@@ -140,6 +141,40 @@ var server = function() {
 
     }
 
+    self.routes['/slack_invite'] = function(req, res) {
+
+      var pattern = new RegExp("^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$");
+      var valid = pattern.test(req.body.email);
+      if (valid){
+
+        var url = "https://slack.com/api/users.admin.invite?token=" +  config.slack.apiKey + "&email=" req.body.email
+
+
+        const options = {
+          url:url
+          method: 'GET',
+          mode:"no-cors",
+          headers: {
+            'Access-Control-Allow-Origin':'*',
+            'Accept':'application/json',
+            'Content-Type': 'application/json'
+          }
+        }
+
+
+        request(options, function (error, response, body) {
+
+            // console.log(error, response, body) // Show the HTML for the Google homepage.
+
+            res.json(JSON.parse(body))
+
+        })
+
+
+      }
+
+    }
+
 
   };
 
@@ -152,6 +187,7 @@ var server = function() {
     self.createRoutes();
     self.app = express();
     self.app.use(express.static('public'));
+    self.app.use(bodyParser());
     self.app.use('/', express.static(__dirname + '/build'));
     self.app.use('/stylesheets', express.static(__dirname + '/public/css'));
     self.app.use('/images', express.static(__dirname + '/public/img'));
