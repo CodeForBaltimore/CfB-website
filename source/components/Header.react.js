@@ -55,13 +55,13 @@ var Header = React.createClass({
             <img style={{width:"100%",margin:"5px"}} src={this.props.imgLogoSrc} />
           </Col>
           <Col xsHidden={true} md={7} className="pull-right">
-            <h1 style={headerStyle}>{this.props.headerText}</h1>
-            <h2 style={subHeaderStyle}>{this.props.subHeaderText}</h2>
+            <h2 style={headerStyle}>{this.props.headerText}</h2>
+            <h3 style={subHeaderStyle}>{this.props.subHeaderText}</h3>
           </Col>
         </Row>
         <Row>
           <Col mdHidden={true} smHidden={true} lgHidden={true} xs={12}>
-            <h1 style={altHeaderStyle}>{this.props.headerText}</h1>
+            <h2 style={altHeaderStyle}>{this.props.headerText}</h2>
           </Col>
         </Row>
 

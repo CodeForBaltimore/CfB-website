@@ -1,7 +1,6 @@
 #build files
-public/js/client.js
-client.js
-style.css
+*client.js
+*style.css
 
 # Logs
 logs

@@ -61,7 +61,7 @@ var Featured = React.createClass({
       <Col xs={8} style={wrappers}>
         <div style={featuredImage}>
         <a href="https://github.com/CodeForBaltimore" target="_blank">
-          <img src="/images/main.jpg" style={squareImage}/>
+          <img src="/images/p1.jpg" style={squareImage}/>
         </a>
         </div>
 
@@ -70,12 +70,12 @@ var Featured = React.createClass({
         <Col xs={4} style={wrappers}>
           <div style={secondImage}>
           <a href="https://github.com/CodeForBaltimore" target="_blank">
-            <img src="/images/2.jpg" style={squareImage}/>
+            <img src="/images/p2.jpg" style={squareImage}/>
           </a>
           </div>
           <div style={thirdImage}>
           <a href="https://github.com/CodeForBaltimore" target="_blank">
-            <img src="/images/3.jpg" style={squareImage}/>
+            <img src="/images/p3.jpg" style={squareImage}/>
           </a>
           </div>
 
