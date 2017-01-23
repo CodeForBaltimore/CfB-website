@@ -41830,99 +41830,112 @@ var Form = require('react-bootstrap').Form;
 var slackRest = require('../utilities/slackRest.js');
 
 var style = {
-  color: "#3d5a6c",
-  maxHeight: "50px",
-  fontSize: "2.5em",
-  overflow: "ellipsis",
-  fontFamily: "Futura, Helvetica, 'Open Sans', sans-serif",
-  fontWeight: "lighter",
-  textAlign: "right"
+    color: "#3d5a6c",
+    maxHeight: "50px",
+    fontSize: "2.5em",
+    overflow: "ellipsis",
+    fontFamily: "Futura, Helvetica, 'Open Sans', sans-serif",
+    fontWeight: "lighter",
+    textAlign: "right"
 };
 
 var Slack = React.createClass({
-  displayName: 'Slack',
-  getValidationState: function getValidationState() {
+    displayName: 'Slack',
+    getValidationState: function getValidationState() {
 
-    var pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var valid = pattern.test(this.state.value);
+        var pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var valid = pattern.test(this.state.value);
 
-    if (valid) return 'success';else return 'warning';
-  },
-  handleChange: function handleChange(e) {
+        if (valid) return 'success';else return 'warning';
+    },
+    handleChange: function handleChange(e) {
 
-    this.setState({ value: e.target.value });
-  },
+        this.setState({
+            value: e.target.value
+        });
+    },
 
 
-  handleSubmit: function handleSubmit(e) {
-    console.log("handleSubmit");
+    handleSubmit: function handleSubmit(e) {
+        console.log("handleSubmit");
 
-    if (this.getValidationState === 'success') {
-      console.log("submit to slackRest");
-      slackRest.postNewEmail(this.state.value, function (data) {
-        console.log(data);
-      });
+        if (this.getValidationState() == 'success') {
+            console.log("submit to slackRest");
+            slackRest.postNewEmail(this.state.value, function (data) {
+                console.log(data);
+                if (data.ok) {
+                    alert("You have been added to slack. Check your email for the invite.");
+                    this.setState({
+                        value: ''
+                    });
+                } else {
+                    alert("Something went wrong \"" + data.error + '\"');
+                }
+            });
+        }
+        e.preventDefault();
+    },
+
+    //default API ----------------
+
+    //getDefaultProps: function(){
+    //    return null;
+    //},
+
+    getInitialState: function getInitialState() {
+        return {
+            value: ''
+        };
+    },
+    //
+    //componentWillMount: function(){},
+    //
+    //componentDidMount: function(){},
+    //
+    //componentWillReceiveProps: function(){},
+
+    //shouldComponentUpdate: function(){},
+
+    //componentWillUpdate: function(){},
+
+    render: function render() {
+        return React.createElement(
+            Row,
+            { style: {
+                    padding: "15px"
+                } },
+            React.createElement(
+                Form,
+                { inline: true, onSubmit: this.handleSubmit },
+                React.createElement(
+                    FormGroup,
+                    { controlId: 'slackEmail',
+                        validationState: this.getValidationState() },
+                    React.createElement(FormControl, { type: 'text',
+                        value: this.state.value,
+                        placeholder: 'Enter your email',
+                        onChange: this.handleChange
+                    }),
+                    ' ',
+                    React.createElement(FormControl.Feedback, null)
+                ),
+                ' ',
+                React.createElement(
+                    'button',
+                    { className: 'btn-slack btn',
+                        onClick: this.handleSubmit },
+                    ' Join Slack '
+                ),
+                ' '
+            )
+        );
     }
-    e.preventDefault();
-  },
 
-  //default API ----------------
+    //,
 
-  //getDefaultProps: function(){
-  //    return null;
-  //},
-
-  getInitialState: function getInitialState() {
-    return {
-      value: ''
-    };
-  },
-  //
-  //componentWillMount: function(){},
-  //
-  //componentDidMount: function(){},
-  //
-  //componentWillReceiveProps: function(){},
-
-  //shouldComponentUpdate: function(){},
-
-  //componentWillUpdate: function(){},
-
-  render: function render() {
-    return React.createElement(
-      Row,
-      { style: { padding: "15px" } },
-      React.createElement(
-        Form,
-        { inline: true, onSubmit: this.handleSubmit },
-        React.createElement(
-          FormGroup,
-          {
-            controlId: 'slackEmail',
-            validationState: this.getValidationState()
-          },
-          React.createElement(FormControl, {
-            type: 'text',
-            value: this.state.value,
-            placeholder: 'Enter your email',
-            onChange: this.handleChange
-          }),
-          React.createElement(FormControl.Feedback, null)
-        ),
-        React.createElement(
-          'button',
-          { className: 'btn-slack btn', onClick: this.handleSubmit },
-          'Join Slack'
-        )
-      )
-    );
-  }
-
-  //,
-
-  //componentDidUpdate: function(){},
-  //
-  //componentWillUnmount: function(){}
+    //componentDidUpdate: function(){},
+    //
+    //componentWillUnmount: function(){}
 
 });
 

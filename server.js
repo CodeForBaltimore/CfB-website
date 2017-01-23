@@ -150,7 +150,7 @@ var server = function() {
     self.createRoutes();
     self.app = express();
     self.app.use(express.static('public'));
-    self.app.use(bodyParser());
+    self.app.use(bodyParser.json());
     self.app.use('/', express.static(__dirname + '/build'));
     self.app.use('/stylesheets', express.static(__dirname + '/public/css'));
     self.app.use('/images', express.static(__dirname + '/public/img'));
