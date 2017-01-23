@@ -11,7 +11,7 @@ var request = require('request');
 
 //local host only example
 // var ip_addr = 'process.env.IP';
-var port = '8080';
+var port = '3000';
 
 var server = function() {
 
@@ -147,11 +147,13 @@ var server = function() {
       var valid = pattern.test(req.body.email);
       if (valid){
 
-        var url = "https://slack.com/api/users.admin.invite?token=" +  config.slack.apiKey + "&email=" req.body.email
+        var key = config.slack.apiKey
+
+        var url = "https://slack.com/api/users.admin.invite?token=" +  key + "&email=" + req.body.email
 
 
         const options = {
-          url:url
+          url:url,
           method: 'GET',
           mode:"no-cors",
           headers: {

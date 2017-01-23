@@ -7,7 +7,7 @@ const headerStyle ={
   marginBottom:"0px",
   fontSize:"2em",
   color:"#3d5a6c",
-  fontFamily:"Futura",
+  fontFamily:"Futura, Helvetica, 'Open Sans', sans-serif",
   fontWeight: 'bold'
 }
 

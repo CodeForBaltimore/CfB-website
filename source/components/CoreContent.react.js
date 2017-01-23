@@ -8,6 +8,7 @@ var JoinUs = require('./JoinUs.react');
 var Featured = require('./Featured.react');
 var Photos = require('./Photos.react');
 var Conduct = require('./Conduct.react')
+var Slack = require('./Slack.react')
 
 
 const iconStyle = {
@@ -73,6 +74,7 @@ var CoreContent = React.createClass({
     )
 
     var conduct = <Conduct />
+    var slack = <Slack />
 
 
 
@@ -102,6 +104,14 @@ var CoreContent = React.createClass({
           showBar={true}
           align="left"
           content={meetupData}
+        />
+
+        <ContentCard
+          headerText="SLACK"
+          subHeaderText="Join the conversation"
+          align="left"
+          content={slack}
+          showBar={true}
         />
 
         <ContentCard

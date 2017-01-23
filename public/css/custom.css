@@ -1,0 +1,45 @@
+.btn-slack {
+  color: #FFFFFF;
+  background-color: #3D5A6C;
+  border-color: #3D5A6C;
+}
+
+.btn-slack:hover,
+.btn-slack:focus,
+.btn-slack:active,
+.btn-slack.active,
+.open .dropdown-toggle.btn-slack {
+  color: #FFFFFF;
+  background-color: #49247A;
+  border-color: #3D5A6C;
+}
+
+.btn-slack:active,
+.btn-slack.active,
+.open .dropdown-toggle.btn-slack {
+  background-image: none;
+}
+
+.btn-slack.disabled,
+.btn-slack[disabled],
+fieldset[disabled] .btn-slack,
+.btn-slack.disabled:hover,
+.btn-slack[disabled]:hover,
+fieldset[disabled] .btn-slack:hover,
+.btn-slack.disabled:focus,
+.btn-slack[disabled]:focus,
+fieldset[disabled] .btn-slack:focus,
+.btn-slack.disabled:active,
+.btn-slack[disabled]:active,
+fieldset[disabled] .btn-slack:active,
+.btn-slack.disabled.active,
+.btn-slack[disabled].active,
+fieldset[disabled] .btn-slack.active {
+  background-color: #3D5A6C;
+  border-color: #3D5A6C;
+}
+
+.btn-slack .badge {
+  color: #3D5A6C;
+  background-color: #FFFFFF;
+}

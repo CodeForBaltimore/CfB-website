@@ -40518,6 +40518,7 @@ var config = {};
 
 config.meetup = {};
 config.meetup.apiKey = "72373918225f3d7352265952386c2b";
+config.slack = {};
 config.slack.apiKey = "xoxp-94301311829-94301311845-130197128401-b2172751d76904df0817d63824d3387d";
 
 module.exports = config;
@@ -40548,7 +40549,7 @@ var meetUpActions = {
 
 module.exports = meetUpActions;
 
-},{"../constants/meetUp.constants.js":451,"../dispatcher/AppDispatcher":452,"../utilities/meetUpRest.js":454}],439:[function(require,module,exports){
+},{"../constants/meetUp.constants.js":452,"../dispatcher/AppDispatcher":453,"../utilities/meetUpRest.js":455}],439:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -40740,7 +40741,7 @@ var headerStyle = {
   marginBottom: "0px",
   fontSize: "2em",
   color: "#3d5a6c",
-  fontFamily: "Futura",
+  fontFamily: "Futura, Helvetica, 'Open Sans', sans-serif",
   fontWeight: 'bold'
 };
 
@@ -40888,6 +40889,7 @@ var JoinUs = require('./JoinUs.react');
 var Featured = require('./Featured.react');
 var Photos = require('./Photos.react');
 var Conduct = require('./Conduct.react');
+var Slack = require('./Slack.react');
 
 var iconStyle = {
   maxHeight: "80px",
@@ -40972,6 +40974,7 @@ var CoreContent = React.createClass({
     );
 
     var conduct = React.createElement(Conduct, null);
+    var slack = React.createElement(Slack, null);
 
     return React.createElement(
       Row,
@@ -40997,6 +41000,13 @@ var CoreContent = React.createClass({
           showBar: true,
           align: 'left',
           content: meetupData
+        }),
+        React.createElement(ContentCard, {
+          headerText: 'SLACK',
+          subHeaderText: 'Join the conversation',
+          align: 'left',
+          content: slack,
+          showBar: true
         }),
         React.createElement(ContentCard, {
           headerText: 'PHOTOS',
@@ -41043,7 +41053,7 @@ var CoreContent = React.createClass({
 
 module.exports = CoreContent;
 
-},{"./Conduct.react":441,"./ContentCard.react":442,"./Featured.react":444,"./JoinUs.react":447,"./Meetup.react":448,"./Partners.react":449,"./Photos.react":450,"react":431,"react-bootstrap":250}],444:[function(require,module,exports){
+},{"./Conduct.react":441,"./ContentCard.react":442,"./Featured.react":444,"./JoinUs.react":447,"./Meetup.react":448,"./Partners.react":449,"./Photos.react":450,"./Slack.react":451,"react":431,"react-bootstrap":250}],444:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -41610,7 +41620,7 @@ var Meetup = React.createClass({
 
 module.exports = Meetup;
 
-},{"../actions/meetUp.actions.js":438,"../stores/meetUp.store.js":453,"react":431,"react-bootstrap":250}],449:[function(require,module,exports){
+},{"../actions/meetUp.actions.js":438,"../stores/meetUp.store.js":454,"react":431,"react-bootstrap":250}],449:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -41808,6 +41818,119 @@ module.exports = Photos;
 },{"react":431,"react-bootstrap":250}],451:[function(require,module,exports){
 'use strict';
 
+var React = require('react');
+var Col = require('react-bootstrap').Col;
+var Row = require('react-bootstrap').Row;
+var FormGroup = require('react-bootstrap').FormGroup;
+var FormControl = require('react-bootstrap').FormControl;
+var ControlLabel = require('react-bootstrap').ControlLabel;
+var HelpBlock = require('react-bootstrap').HelpBlock;
+var Button = require('react-bootstrap').Button;
+var Form = require('react-bootstrap').Form;
+var slackRest = require('../utilities/slackRest.js');
+
+var style = {
+  color: "#3d5a6c",
+  maxHeight: "50px",
+  fontSize: "2.5em",
+  overflow: "ellipsis",
+  fontFamily: "Futura, Helvetica, 'Open Sans', sans-serif",
+  fontWeight: "lighter",
+  textAlign: "right"
+};
+
+var Slack = React.createClass({
+  displayName: 'Slack',
+  getValidationState: function getValidationState() {
+
+    var pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var valid = pattern.test(this.state.value);
+
+    if (valid) return 'success';else return 'warning';
+  },
+  handleChange: function handleChange(e) {
+
+    this.setState({ value: e.target.value });
+  },
+
+
+  handleSubmit: function handleSubmit(e) {
+    console.log("handleSubmit");
+
+    if (this.getValidationState == 'success') {
+      console.log("submit to slackRest");
+      slackRest.postNewEmail(this.state.value, function (data) {
+        console.log(data);
+      });
+    }
+    e.preventDefault();
+  },
+
+  //default API ----------------
+
+  //getDefaultProps: function(){
+  //    return null;
+  //},
+
+  getInitialState: function getInitialState() {
+    return {
+      value: ''
+    };
+  },
+  //
+  //componentWillMount: function(){},
+  //
+  //componentDidMount: function(){},
+  //
+  //componentWillReceiveProps: function(){},
+
+  //shouldComponentUpdate: function(){},
+
+  //componentWillUpdate: function(){},
+
+  render: function render() {
+    return React.createElement(
+      Row,
+      { style: { padding: "15px" } },
+      React.createElement(
+        Form,
+        { inline: true, onSubmit: this.handleSubmit },
+        React.createElement(
+          FormGroup,
+          {
+            controlId: 'slackEmail',
+            validationState: this.getValidationState()
+          },
+          React.createElement(FormControl, {
+            type: 'text',
+            value: this.state.value,
+            placeholder: 'Enter your email',
+            onChange: this.handleChange
+          }),
+          React.createElement(FormControl.Feedback, null)
+        ),
+        React.createElement(
+          'button',
+          { className: 'btn-slack btn', onClick: this.handleSubmit },
+          'Join Slack'
+        )
+      )
+    );
+  }
+
+  //,
+
+  //componentDidUpdate: function(){},
+  //
+  //componentWillUnmount: function(){}
+
+});
+
+module.exports = Slack;
+
+},{"../utilities/slackRest.js":456,"react":431,"react-bootstrap":250}],452:[function(require,module,exports){
+'use strict';
+
 var keyMirror = require('keymirror');
 
 module.exports = {
@@ -41818,7 +41941,7 @@ module.exports = {
 
 };
 
-},{"keymirror":161}],452:[function(require,module,exports){
+},{"keymirror":161}],453:[function(require,module,exports){
 'use strict';
 
 var Dispatcher = require('flux').Dispatcher;
@@ -41828,7 +41951,7 @@ var Dispatcher = require('flux').Dispatcher;
 
 module.exports = new Dispatcher();
 
-},{"flux":156,"object-assign":162}],453:[function(require,module,exports){
+},{"flux":156,"object-assign":162}],454:[function(require,module,exports){
 'use strict';
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
@@ -41897,7 +42020,7 @@ AppDispatcher.register(function (action) {
 
 module.exports = meetUpStore;
 
-},{"../constants/meetUp.constants.js":451,"../dispatcher/AppDispatcher":452,"events":132,"object-assign":162,"react":431}],454:[function(require,module,exports){
+},{"../constants/meetUp.constants.js":452,"../dispatcher/AppDispatcher":453,"events":132,"object-assign":162,"react":431}],455:[function(require,module,exports){
 'use strict';
 
 require('es6-promise').polyfill();
@@ -41917,6 +42040,37 @@ module.exports = {
             callback(json);
         });
     }
+};
+
+},{"../../private/config.js":437,"es6-promise":131,"isomorphic-fetch":159}],456:[function(require,module,exports){
+'use strict';
+
+require('es6-promise').polyfill();
+var fetch = require('isomorphic-fetch');
+var config = require("../../private/config.js");
+
+module.exports = {
+
+  postNewEmail: function postNewEmail(emailAddr, callback) {
+    console.log("postNewEmail", emailAddr);
+
+    var options = {
+      method: "POST",
+      body: JSON.stringify({ email: emailAddr }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+
+    fetch('/slack_invite', options).then(function (response) {
+      if (response.status >= 400) {
+        throw new Error("Bad response from server");
+      }
+      return response.json();
+    }).then(function (json) {
+      callback(json);
+    });
+  }
 };
 
 },{"../../private/config.js":437,"es6-promise":131,"isomorphic-fetch":159}]},{},[439]);
